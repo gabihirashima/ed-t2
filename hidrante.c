@@ -9,6 +9,11 @@ char cfill[20]; /*cor de preenchimento do objeto*/
 char cstrk[20]; /*cor da borda do objeto*/
 }Hidrante;
 
+int getHidranteId(void *hidrante){
+    Hidrante *h = (Hidrante*)hidrante;
+    return h->id;
+}
+
 double getHidranteX(void *hidrante){
     Hidrante *h = (Hidrante*)hidrante;
     return h->x;

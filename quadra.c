@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "quadra.h"
 
 typedef struct quadra{
 int cep; /*identificação de quadra*/
@@ -11,32 +12,37 @@ char cfill[20]; /*cor de preenchimento da quadra*/
 char cstrk[20]; /*cor da borda da quadra*/
 }Quadra;
 
-double getQuadraX(void *quadra){
+int getQuadraCep(Quadra *quadra){
+    Quadra *q = (Quadra*)quadra;
+    return q->cep;
+}
+
+double getQuadraX(Quadra *quadra){
     Quadra *q = (Quadra*)quadra;
     return q->x;
 }
 
-double getQuadraY(void *quadra){
+double getQuadraY(Quadra *quadra){
     Quadra *q = (Quadra*)quadra;
     return q->y;
 }
 
-double getQuadraW(void *quadra){
+double getQuadraW(Quadra *quadra){
     Quadra *q = (Quadra*)quadra;
     return q->w;
 }
 
-double getQuadraH(void *quadra){
+double getQuadraH(Quadra *quadra){
     Quadra *q = (Quadra*)quadra;
     return q->h;
 }
 
-char getQuadraCFill(void *quadra){
+char getQuadraCFill(Quadra *quadra){
     Quadra *q = (Quadra*)quadra;
     return q->cfill;
 }
 
-char getQuadraCStroke(void *quadra){
+char getQuadraCStroke(Quadra *quadra){
     Quadra *q = (Quadra*)quadra;
     return q->cstrk;
 }

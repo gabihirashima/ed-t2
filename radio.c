@@ -9,6 +9,11 @@ char cfill[20]; /*cor de preenchimento do objeto*/
 char cstrk[20]; /*cor de borda do objeto*/
 }Radio;
 
+int getRadioId(void *radio){
+    Radio *r = (Radio*)radio;
+    return r->id;
+}
+
 double getRadioX(void *radio){
     Radio *r = (Radio*)radio;
     return r->x;

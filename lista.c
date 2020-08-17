@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "variaveis.h"
 
 typedef struct no{
     void *elemento;
@@ -7,9 +8,17 @@ typedef struct no{
     struct no *prox;
 }No;
 
+typedef struct lista{
+    No *primeiro;
+    No *ultimo;
+}Lista;
+
 /*inicia a lista*/
 void criaLista(){
-
+    Lista *list = (Lista*)malloc(sizeof(Lista));
+    list->primeiro = NULL;
+    list->primeiro = NULL;
+    return list;
 }
 
 /*retorna o numero de elementos da lista*/
@@ -18,8 +27,20 @@ void tamanhoLista(){
 }
 
 /*insere um elemento no final da lista*/
-void insereElemento(){
+void insereElemento(Lista *l, void *elemento){
+    Lista *list = (Lista*)l;
+    No* node = (No*)malloc(sizeof(No));
+        if(list->primeiro == NULL){ /*se a lista esta vazia*/
+            node->ant = NULL; /*o anterior aponta para null*/
+            list->primeiro = node; /*o primeiro elemento da lista é node*/
+        }
+        else{ /*senao*/
+            list->ultimo->prox = node; /*o prox do ultimo elemento adicionado aponta para o novo node*/
+            node->ant = list->ultimo; /*o ponteiro de anterior aponta pro ultimo elemento adicionado*/
+        }
 
+        node->prox = NULL;
+        list->ultimo = node; 
 }
 
 /*remove um elemento na lista*/
