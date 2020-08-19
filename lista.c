@@ -26,6 +26,16 @@ void tamanhoLista(){
 
 }
 
+/*Imprime a lista completamente*/
+void imprimeLista(){
+
+}
+
+/*libera a lista completamente*/
+void liberaLista(){
+
+}
+
 /*insere um elemento no final da lista*/
 void insereElemento(Lista *l, void *elemento){
     Lista *list = (Lista*)l;
@@ -46,7 +56,8 @@ void insereElemento(Lista *l, void *elemento){
 }
 
 /*remove um elemento na lista*/
-void removeElemento(){
+void removeElemento(Lista *l, void *elemento){
+    Lista *list = (Lista*)l; 
 
 }
 
