@@ -17,7 +17,7 @@ typedef struct lista{
 void criaLista(){
     Lista *list = (Lista*)malloc(sizeof(Lista));
     list->primeiro = NULL;
-    list->primeiro = NULL;
+    list->ultimo = NULL;
     return list;
 }
 
@@ -29,7 +29,9 @@ void tamanhoLista(){
 /*insere um elemento no final da lista*/
 void insereElemento(Lista *l, void *elemento){
     Lista *list = (Lista*)l;
+    
     No* node = (No*)malloc(sizeof(No));
+    node->elemento = elemento;
         if(list->primeiro == NULL){ /*se a lista esta vazia*/
             node->ant = NULL; /*o anterior aponta para null*/
             list->primeiro = node; /*o primeiro elemento da lista é node*/
