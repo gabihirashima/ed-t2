@@ -56,9 +56,13 @@ void insereElemento(Lista *l, void *elemento){
 }
 
 /*remove um elemento na lista*/
-void removeElemento(Lista *l, void *elemento){
+void removeElemento(Lista *l, void *elemento, int id){
     Lista *list = (Lista*)l; 
+    Lista *aux = NULL;
 
+        while(list != NULL){
+
+        } 
 }
 
 /*retorna o valor do elemento, caso ele exista*/
