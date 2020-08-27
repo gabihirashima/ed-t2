@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "variaveis.h"
+#include "listas.h"
 
 typedef struct no{
     void *elemento;
@@ -37,7 +38,7 @@ void liberaLista(){
 }
 
 /*insere um elemento no final da lista*/
-void insereElemento(Lista *l, void *elemento){
+void insereElemento(Lista *l, tipo elemento){
     Lista *list = (Lista*)l;
     
     No* node = (No*)malloc(sizeof(No));
@@ -56,7 +57,7 @@ void insereElemento(Lista *l, void *elemento){
 }
 
 /*remove um elemento na lista*/
-void removeElemento(Lista *l, void *elemento, int id){
+void removeElemento(Lista *l, tipo  elemento, int id){
     Lista *list = (Lista*)l; 
     Lista *aux = NULL;
 
