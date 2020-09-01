@@ -15,7 +15,7 @@ typedef struct lista{
 }Lista;
 
 /*inicia a lista*/
-void *criaLista(){
+listaStruct *criaLista(){
     Lista *list = (Lista*)malloc(sizeof(Lista));
     list->primeiro = NULL;
     list->ultimo = NULL;
@@ -23,22 +23,22 @@ void *criaLista(){
 }
 
 /*retorna o numero de elementos da lista*/
-void tamanhoLista(){
+listaStruct tamanhoLista(){
 
 }
 
 /*Imprime a lista completamente*/
-void imprimeLista(){
+listaStruct imprimeLista(Lista *l, tipo elemento){
 
 }
 
 /*libera a lista completamente*/
-void liberaLista(){
+listaStruct liberaLista(){
 
 }
 
 /*insere um elemento no final da lista*/
-void insereElemento(Lista *l, tipo elemento){
+listaStruct insereElemento(Lista *l, tipo elemento){
     Lista *list = (Lista*)l;
     
     No* node = (No*)malloc(sizeof(No));
@@ -57,7 +57,7 @@ void insereElemento(Lista *l, tipo elemento){
 }
 
 /*remove um elemento na lista*/
-void removeElemento(Lista *l, tipo  elemento, int id){
+listaStruct removeElemento(Lista *l, tipo  elemento, int id){
     Lista *list = (Lista*)l; 
     Lista *aux = NULL;
 
@@ -67,36 +67,36 @@ void removeElemento(Lista *l, tipo  elemento, int id){
 }
 
 /*retorna o valor do elemento, caso ele exista*/
-void getElemento(){
+listaStruct getElemento(){
 
 }
 
 /*insere um elemento antes da posicao indicada e retorna o indicador para esse elemento, caso a posição indicada exista*/
-void insertBefore(){
+listaStruct insertBefore(){
 
 }
 
 /*insere um elemento depois da posicao indicada e retorna o indicador para esse elemento, caso a posição indicada exista*/
-void insertAfter(){
+listaStruct insertAfter(){
 
 }
 
 /*retorna o primeiro elemento da lista, se a lista estiver vazia retorna null*/
-void getFirst(){
+listaStruct getFirst(){
 
 }
 
 /*retorna o elemento posterior a posicao inserida*/
-void getNext(){
+listaStruct getNext(){
 
 }
 
 /*retorna o ultimo elemento da lista, se a lista estiver vazia, retorna null*/
-void getLast(){
+listaStruct getLast(){
 
 }
 
 /*retorna o elemento anterior a posicao inserida*/
-void getPrevious(){
+listaStruct getPrevious(){
 
 }
