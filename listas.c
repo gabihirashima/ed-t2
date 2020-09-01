@@ -30,8 +30,8 @@ listaStruct tamanhoLista(){
 }
 
 /*Imprime a lista completamente*/
-listaStruct imprimeLista(Lista *l, tipo elemento){
-    Lista *list = (Lista*)l;
+listaStruct imprimeLista(listaStruct l, tipo elemento){
+    Lista *list = (listaStruct)l;
         while(list != NULL){
             printf("%s", elemento);
         }
@@ -43,8 +43,8 @@ listaStruct liberaLista(){
 }
 
 /*insere um elemento no final da lista*/
-listaStruct insereElemento(Lista *l, tipo elemento){
-    Lista *list = (Lista*)l;
+listaStruct insereElemento(listaStruct l, tipo elemento){
+    Lista *list = (listaStruct)l;
     
     No* node = (No*)malloc(sizeof(No));
     node->elemento = elemento;
