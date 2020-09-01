@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "radio.h"
 
 typedef struct radio{
@@ -20,27 +21,27 @@ Radio criaRadio(int id, double x, double y, char *cfill, char *cstrk){
     return r;
 }
 
-int getRadioId(void *radio){
-    Radio_S *r = (Radio*)radio;
+int getRadioId(Radio radio){
+    Radio_S *r = (Radio)radio;
     return r->id;
 }
 
-double getRadioX(void *radio){
-    Radio_S *r = (Radio*)radio;
+double getRadioX(Radio radio){
+    Radio_S *r = (Radio)radio;
     return r->x;
 }
 
-double getRadioY(void *radio){
-    Radio_S *r = (Radio*)radio;
+double getRadioY(Radio radio){
+    Radio_S *r = (Radio)radio;
     return r->y;
 }
 
-char getRadioCFill(void *radio){
-    Radio_S *r = (Radio*)radio;
+char getRadioCFill(Radio radio){
+    Radio_S *r = (Radio)radio;
     return r->cfill;
 }
 
-char getRadioCStroke(void *radio){
-    Radio_S *r = (Radio*)radio;
+char getRadioCStroke(Radio radio){
+    Radio_S *r = (Radio)radio;
     return r->cstrk;
 }

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "hidrante.h"
 
 typedef struct hidrante{
@@ -20,27 +21,27 @@ Hidrante criaHidrante(int id, double x, double y, char *cfill, char *cstrk){
     return h;
 }
 
-int getHidranteId(void *hidrante){
-    Hidrante_S *h = (Hidrante*)hidrante;
+int getHidranteId(Hidrante hidrante){
+    Hidrante_S *h = (Hidrante)hidrante;
     return h->id;
 }
 
-double getHidranteX(void *hidrante){
-    Hidrante_S *h = (Hidrante*)hidrante;
+double getHidranteX(Hidrante hidrante){
+    Hidrante_S *h = (Hidrante)hidrante;
     return h->x;
 }
 
-double getHidranteY(void *hidrante){
-    Hidrante_S *h = (Hidrante*)hidrante;
+double getHidranteY(Hidrante hidrante){
+    Hidrante_S *h = (Hidrante)hidrante;
     return h->y;
 }
 
-char getHidranteCFill(void *hidrante){
-    Hidrante_S *h = (Hidrante*)hidrante;
+char getHidranteCFill(Hidrante hidrante){
+    Hidrante_S *h = (Hidrante)hidrante;
     return h->cfill;
 }
 
-char getHidranteCStroke(void *hidrante){
-    Hidrante_S *h = (Hidrante*)hidrante;
+char getHidranteCStroke(Hidrante hidrante){
+    Hidrante_S *h = (Hidrante)hidrante;
     return h->cstrk;
 }

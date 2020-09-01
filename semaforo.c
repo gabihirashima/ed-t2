@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "semaforo.h"
 
 typedef struct semaforo{
@@ -20,27 +21,27 @@ Semaforo criaSemaforo(int id, double x, double y, char *cfill, char *cstrk){
     return s;
 }
 
-int getSemaforoId(void *semaforo){
-    Semaforo_S *s = (Semaforo*)semaforo;
+int getSemaforoId(Semaforo semaforo){
+    Semaforo_S *s = (Semaforo)semaforo;
     return s->id;
 }
 
-double getSemaforoX(void *semaforo){
-    Semaforo_S *s = (Semaforo*)semaforo;
+double getSemaforoX(Semaforo semaforo){
+    Semaforo_S *s = (Semaforo)semaforo;
     return s->x;
 }
 
-double getSemaforoY(void *semaforo){
-    Semaforo_S *s = (Semaforo*)semaforo;
+double getSemaforoY(Semaforo semaforo){
+    Semaforo_S *s = (Semaforo)semaforo;
     return s->y;
 }
 
-char getSemaforoCFill(void *semaforo){
-    Semaforo_S *s = (Semaforo*)semaforo;
+char getSemaforoCFill(Semaforo semaforo){
+    Semaforo_S *s = (Semaforo)semaforo;
     return s->cfill;
 }
 
-char getSemaforoCStroke(void *semaforo){
-    Semaforo_S *s = (Semaforo*)semaforo;
+char getSemaforoCStroke(Semaforo semaforo){
+    Semaforo_S *s = (Semaforo)semaforo;
     return s->cstrk;
 }
