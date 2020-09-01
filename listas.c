@@ -62,13 +62,8 @@ listaStruct insereElemento(listaStruct l, tipo elemento){
 }
 
 /*remove um elemento na lista*/
-listaStruct removeElemento(Lista *l, tipo  elemento, int id){
-    Lista *list = (Lista*)l; 
-    Lista *aux = NULL;
+listaStruct removeElemento(listaStruct l, tipo  elemento, int id){
 
-        while(list != NULL){
-
-        } 
 }
 
 /*retorna o valor do elemento, caso ele exista*/
