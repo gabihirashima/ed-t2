@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include "variaveis.h"
 #include "listas.h"
+#include "radio.h"
 
 typedef struct no{
     void *elemento;
@@ -29,7 +30,10 @@ listaStruct tamanhoLista(){
 
 /*Imprime a lista completamente*/
 listaStruct imprimeLista(Lista *l, tipo elemento){
-
+    Lista *list = (Lista*)l;
+        while(list != NULL){
+            printf("%s", elemento);
+        }
 }
 
 /*libera a lista completamente*/

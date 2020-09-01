@@ -7,7 +7,8 @@
 
 void main(int argc, char *argv[]){
     listaStruct listaR = criaLista();
+    tipo elemento; 
 
-    criaRadio(1, 2.3, 2.4, "vermelho", "azul");
-    listaR = insereElemento(listaR, criaRadio);
+    elemento = criaRadio(1, 2.3, 2.4, "vermelho", "azul");
+    listaR = insereElemento(listaR, elemento);
 }
