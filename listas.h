@@ -18,10 +18,10 @@ listaStruct imprimeLista();
 listaStruct liberaLista();
 
 /*insere um elemento no final da lista*/
-listaStruct insereElemento(listaStruct, tipo);
+listaStruct insereElemento(Lista*, tipo);
 
 /*remove um elemento na listaStruct*/
-listaStruct removeElemento(listaStruct, tipo, int);
+listaStruct removeElemento(Lista*, tipo, int);
 
 /*retorna o valor do elemento, caso ele exista*/
 listaStruct getElemento();
