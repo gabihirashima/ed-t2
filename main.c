@@ -11,5 +11,7 @@ void main(int argc, char *argv[]){
 
     elemento = criaRadio(1, 2.3, 2.4, "vermelho", "azul");
     listaR = insereElemento(listaR, elemento);
-    printf("Funcionando até aqui");
+    elemento = criaRadio(2, 4.7, 5.8, "amarelo", "roxo");
+    listaR = insereElemento(listaR, elemento);
+    imprimeLista(listaR, 'r');
 }

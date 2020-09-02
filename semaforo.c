@@ -12,7 +12,7 @@ char cstrk[20]; /*cor da borda do objeto*/
 }Semaforo_S;
 
 Semaforo criaSemaforo(int id, double x, double y, char *cfill, char *cstrk){
-    Semaforo_S *s;
+    Semaforo_S *s = (Semaforo_S*)malloc(sizeof(Semaforo_S));
     s->id = id;
     s->x = x;
     s->y = y;

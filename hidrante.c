@@ -12,7 +12,7 @@ char cstrk[20]; /*cor da borda do objeto*/
 }Hidrante_S;
 
 Hidrante criaHidrante(int id, double x, double y, char *cfill, char *cstrk){
-    Hidrante_S *h;
+    Hidrante_S *h =(Hidrante_S*)malloc(sizeof(Hidrante_S));
     h->id = id;
     h->x = x;
     h->y = y;

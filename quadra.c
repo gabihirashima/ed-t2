@@ -15,7 +15,7 @@ char cstrk[20]; /*cor da borda da quadra*/
 }Quadra_S;
 
 Quadra criaQuadra(int cep, double x, double y, double w, double h, char *cfill, char *cstrk){
-    Quadra_S *q;
+    Quadra_S *q = (Quadra_S*)malloc(sizeof(Quadra_S));
     q->cep = cep;
     q->x = x;
     q->y = y;
