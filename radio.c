@@ -12,7 +12,7 @@ char cstrk[20]; /*cor de borda do objeto*/
 }Radio_S;
 
 Radio criaRadio(int id, double x, double y, char *cfill, char *cstrk){
-    Radio_S *r;
+    Radio_S *r = (Radio_S*)malloc(sizeof(Radio_S));
     r->id = id;
     r->x = x;
     r->y = y;
