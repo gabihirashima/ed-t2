@@ -12,7 +12,7 @@ listaStruct *criaLista();
 listaStruct tamanhoLista();
 
 /*Imprime a lista completamente*/
-listaStruct imprimeLista(listaStruct, tipo);
+listaStruct imprimeLista(listaStruct, char);
 
 /*libera a lista completamente*/
 listaStruct liberaLista();

@@ -31,7 +31,7 @@ listaStruct tamanhoLista(){
 
 /*Imprime a lista completamente*/
 listaStruct imprimeLista(listaStruct l, char c){
-    Lista *list = (listaStruct)l;
+    Lista *list = (Lista*)l;
     No *node = list->primeiro;
         while(node->prox != NULL){
             if(c == 'r'){
