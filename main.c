@@ -11,8 +11,8 @@ void main(int argc, char *argv[]){
 
     elemento = criaRadio(1, 2.3, 2.4, "vermelho", "azul");
     printf("\n%d, %lf, %lf, %s, %s", getRadioId(elemento), getRadioX(elemento), getRadioY(elemento), getRadioCFill(elemento), getRadioCStroke(elemento));
-    listaR = insereElemento(listaR, elemento);
-    elemento = criaRadio(2, 4.7, 5.8, "amarelo", "roxo");
-    listaR = insereElemento(listaR, elemento);
+    //listaR = insereElemento(listaR, elemento);
+    //elemento = criaRadio(2, 4.7, 5.8, "amarelo", "roxo");
+    //listaR = insereElemento(listaR, elemento);
     //imprimeLista(listaR, 'r');
 }
