@@ -35,7 +35,7 @@ listaStruct imprimeLista(listaStruct l, char c){
     No *node = list->primeiro;
         while(node->prox != NULL){
             if(c == 'r'){
-            printf("\n%d, %lf, %lf, %s, %s", getRadioId(), getRadioX(), getRadioY(), getRadioCFill(), getRadioCStroke());
+            printf("\n%d, %lf, %lf, %s, %s", getRadioId(node->elemento), getRadioX(node->elemento), getRadioY(node->elemento), getRadioCFill(node->elemento), getRadioCStroke(node->elemento));
             }
         }
 }
