@@ -32,9 +32,10 @@ listaStruct tamanhoLista(){
 /*Imprime a lista completamente*/
 listaStruct imprimeLista(listaStruct l, char c){
     Lista *list = (listaStruct)l;
-        while(list != NULL){
+    No *node = list->primeiro;
+        while(node->prox != NULL){
             if(c == 'r'){
-            printf("\n%d, %lf, %lf, %s, %s", getRadioId, getRadioX, getRadioY, getRadioCFill, getRadioCStroke);
+            printf("\n%d, %lf, %lf, %s, %s", getRadioId(), getRadioX(), getRadioY(), getRadioCFill(), getRadioCStroke());
             }
         }
 }
