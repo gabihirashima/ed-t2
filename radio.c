@@ -22,26 +22,26 @@ Radio criaRadio(int id, double x, double y, char *cfill, char *cstrk){
 }
 
 int getRadioId(Radio radio){
-    Radio_S *r = (Radio)radio;
+    Radio_S *r = (Radio_S*)radio;
     return r->id;
 }
 
 double getRadioX(Radio radio){
-    Radio_S *r = (Radio)radio;
+    Radio_S *r = (Radio_S*)radio;
     return r->x;
 }
 
 double getRadioY(Radio radio){
-    Radio_S *r = (Radio)radio;
+    Radio_S *r = (Radio_S*)radio;
     return r->y;
 }
 
 char getRadioCFill(Radio radio){
-    Radio_S *r = (Radio)radio;
+    Radio_S *r = (Radio_S*)radio;
     return r->cfill;
 }
 
 char getRadioCStroke(Radio radio){
-    Radio_S *r = (Radio)radio;
+    Radio_S *r = (Radio_S*)radio;
     return r->cstrk;
 }
