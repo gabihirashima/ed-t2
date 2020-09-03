@@ -25,8 +25,15 @@ listaStruct *criaLista(){
 }
 
 /*retorna o numero de elementos da lista*/
-listaStruct tamanhoLista(){
-
+int tamanhoLista(listaStruct l, char c){
+ Lista *list = (Lista*)l;
+ int tamanho = 0;
+    No *node = list->primeiro;
+        while(node != NULL){
+            tamanho += 1;
+            node = node->prox;
+        }
+    return tamanho;
 }
 
 /*Imprime a lista completamente*/
@@ -92,6 +99,7 @@ listaStruct getFirst(listaStruct l){
         if(node == NULL){
             return NULL;
         }
+        
     return node;
 }
 
@@ -112,6 +120,7 @@ listaStruct getNext(int n, listaStruct l, char c){
             }
             node = node -> prox;
         }
+    return NULL;
 }
 
 /*retorna o ultimo elemento da lista, se a lista estiver vazia, retorna null*/
