@@ -36,12 +36,12 @@ double getSemaforoY(Semaforo semaforo){
     return s->y;
 }
 
-char getSemaforoCFill(Semaforo semaforo){
+char *getSemaforoCFill(Semaforo semaforo){
     Semaforo_S *s = (Semaforo)semaforo;
     return s->cfill;
 }
 
-char getSemaforoCStroke(Semaforo semaforo){
+char *getSemaforoCStroke(Semaforo semaforo){
     Semaforo_S *s = (Semaforo)semaforo;
     return s->cstrk;
 }

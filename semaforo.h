@@ -17,9 +17,9 @@ double getSemaforoX(Semaforo);
 double getSemaforoY(Semaforo);
 
 /*Retorna Cfill de um elemento da lista de semaforos*/
-char getSemaforoCFill(Semaforo);
+char *getSemaforoCFill(Semaforo);
 
 /*Retorna CStroke de um elemento da lista de semaforos*/
-char getSemaforoCStroke(Semaforo);
+char *getSemaforoCStroke(Semaforo);
 
 #endif

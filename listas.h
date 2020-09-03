@@ -38,7 +38,7 @@ listaStruct insertAfter();
 listaStruct getFirst();
 
 /*retorna o elemento posterior a posicao inserida*/
-listaStruct getNext();
+listaStruct getNext(int, listaStruct, char);
 
 /*retorna o ultimo elemento da lista, se a lista estiver vazia, retorna null*/
 listaStruct getLast();

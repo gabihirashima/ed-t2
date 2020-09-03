@@ -36,12 +36,12 @@ double getHidranteY(Hidrante hidrante){
     return h->y;
 }
 
-char getHidranteCFill(Hidrante hidrante){
+char *getHidranteCFill(Hidrante hidrante){
     Hidrante_S *h = (Hidrante)hidrante;
     return h->cfill;
 }
 
-char getHidranteCStroke(Hidrante hidrante){
+char *getHidranteCStroke(Hidrante hidrante){
     Hidrante_S *h = (Hidrante)hidrante;
     return h->cstrk;
 }

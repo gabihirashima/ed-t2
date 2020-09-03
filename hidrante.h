@@ -17,9 +17,9 @@ double getHidranteX(Hidrante);
 double getHidranteY(Hidrante);
 
 /*Retorna CFill de um elemento de uma lista de hidrantes*/
-char getHidranteCFill(Hidrante);
+char *getHidranteCFill(Hidrante);
 
 /*Retorna CStroke de um elemento de uma lista de hidrantes*/
-char getHidranteCStroke(Hidrante);
+char *getHidranteCStroke(Hidrante);
 
 #endif

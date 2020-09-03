@@ -51,12 +51,12 @@ double getQuadraH(Quadra quadra){
     return q->h;
 }
 
-char getQuadraCFill(Quadra quadra){
+char *getQuadraCFill(Quadra quadra){
     Quadra_S *q = (Quadra)quadra;
     return q->cfill;
 }
 
-char getQuadraCStroke(Quadra quadra){
+char *getQuadraCStroke(Quadra quadra){
     Quadra_S *q = (Quadra)quadra;
     return q->cstrk;
 }

@@ -23,9 +23,9 @@ double getQuadraW(Quadra);
 double getQuadraH(Quadra);
 
 /*Retorna o Cfill de um elemento da lista de Quadras*/
-char getQuadraCFill(Quadra);
+char *getQuadraCFill(Quadra);
 
 /*Retorna o CStroke de um elemento da lista de Quadras*/
-char getQuadraCStroke(Quadra);
+char *getQuadraCStroke(Quadra);
 
 #endif

@@ -17,9 +17,9 @@ double getRadioX(Radio);
 double getRadioY(Radio);
 
 /*retorna o Cfill de um elemento da lista de radio*/
-char getRadioCFill(Radio);
+char *getRadioCFill(Radio);
 
 /*retorna o CStroke de um elemento da lista de radio*/
-char getRadioCStroke(Radio);
+char *getRadioCStroke(Radio);
 
 #endif

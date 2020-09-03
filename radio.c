@@ -36,12 +36,12 @@ double getRadioY(Radio radio){
     return r->y;
 }
 
-char getRadioCFill(Radio radio){
+char *getRadioCFill(Radio radio){
     Radio_S *r = (Radio_S*)radio;
     return r->cfill;
 }
 
-char getRadioCStroke(Radio radio){
+char *getRadioCStroke(Radio radio){
     Radio_S *r = (Radio_S*)radio;
     return r->cstrk;
 }

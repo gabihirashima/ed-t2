@@ -33,9 +33,9 @@ listaStruct tamanhoLista(){
 listaStruct imprimeLista(listaStruct l, char c){
     Lista *list = (Lista*)l;
     No *node = list->primeiro;
-        while(node->prox != NULL){
+        while(node != NULL){
             if(c == 'r'){
-            printf("\n%d, %lf, %lf, %s, %s", getRadioId(node->elemento), getRadioX(node->elemento), getRadioY(node->elemento), getRadioCFill(node->elemento), getRadioCStroke(node->elemento));
+                printf("\n%d, %lf, %lf, %s, %s", getRadioId(node->elemento), getRadioX(node->elemento), getRadioY(node->elemento), getRadioCFill(node->elemento), getRadioCStroke(node->elemento));
             }
             node = node->prox;
         }
@@ -66,7 +66,7 @@ listaStruct insereElemento(listaStruct l, tipo elemento){
 }
 
 /*remove um elemento na lista*/
-listaStruct removeElemento(listaStruct l, tipo  elemento, int id){
+listaStruct removeElemento(listaStruct l, tipo elemento, int id){
 
 }
 
@@ -86,13 +86,32 @@ listaStruct insertAfter(){
 }
 
 /*retorna o primeiro elemento da lista, se a lista estiver vazia retorna null*/
-listaStruct getFirst(){
-
+listaStruct getFirst(listaStruct l){
+    Lista *list = (Lista*)l;
+    No *node = list->primeiro;
+        if(node == NULL){
+            return NULL;
+        }
+    return node;
 }
 
 /*retorna o elemento posterior a posicao inserida*/
-listaStruct getNext(){
+listaStruct getNext(int n, listaStruct l, char c){
+    Lista *list = (Lista*)l;
+    No *node = list->primeiro;
+    No *aux;
+        while (node != NULL){
+            if(c == 'r'){
+                if(getRadioId(node->elemento) == n){
+                    aux = node->prox;
+                    return aux;
+                }
+            }
+            else if(c == 'h'){
 
+            }
+            node = node -> prox;
+        }
 }
 
 /*retorna o ultimo elemento da lista, se a lista estiver vazia, retorna null*/
