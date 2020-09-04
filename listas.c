@@ -150,21 +150,29 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
          Lista *list = (listaStruct)l;
     
          No* node = (No*)malloc(sizeof(No));
+         node->elemento = elemento;
+         
          No *inicio = list->primeiro;
          No *aux_1; 
          No *aux_2;
-         node->elemento = elemento;
+
             while (inicio != NULL){
                 if(c == 'r'){
                     if(getRadioId(node->elemento) == id){
                        if(inicio == list->primeiro){
-                            node->ant = inicio->ant;
-                            node->prox = inicio;
+                            aux_1 = inicio;
+                            inicio->ant = node;
+                            node->prox = aux_1;
+                            node->ant = NULL;
                             list->primeiro = node; 
                        }
                        else{
-                            node->ant = inicio->ant;
-                            node->prox = inicio;
+                            aux_1 = inicio;
+                            aux_2 = inicio->ant;
+                            node->ant = aux_2;
+                            node->prox = aux_1;
+                            inicio->ant = node;
+                            inicio->ant->prox = node; 
                        }
                     }
                     return list;
