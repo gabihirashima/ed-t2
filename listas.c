@@ -96,11 +96,11 @@ listaStruct insertAfter(){
 listaStruct getFirst(listaStruct l){
     Lista *list = (Lista*)l;
     No *node = list->primeiro;
-        if(node == NULL){
+        if(list->primeiro == NULL){
             return NULL;
         }
         
-    return node;
+    return node->elemento;
 }
 
 /*retorna o elemento posterior a posicao inserida*/
