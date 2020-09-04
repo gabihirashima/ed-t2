@@ -4,6 +4,7 @@
 #include "formaR.h"
 
 typedef struct formaRetangulo{
+  int id; /*id*/
   double w; /*largura do retangulo*/
   double h; /*altura do retangulo*/
   double x; /*pos x*/
@@ -12,16 +13,23 @@ typedef struct formaRetangulo{
   char corp [20]; /*cor de preenchimento*/
 }Retangulo_S; 
 
-Retangulo criaRetangulo(double w, double h, double x, double y, char *corb, char *corp){
-    Retangulo_S *s =(Retangulo_S*)malloc(sizeof(Retangulo_S));
-    s->w = w;
-    s->h = h;
-    s->x = x;
-    s->y = y;
-    strcpy(s->corb, corb);
-    strcpy(s->corp, corp);
-    return s;
+Retangulo criaRetangulo(int id, double w, double h, double x, double y, char *corb, char *corp){
+    Retangulo_S *r =(Retangulo_S*)malloc(sizeof(Retangulo_S));
+    r->id = id;
+    r->w = w;
+    r->h = h;
+    r->x = x;
+    r->y = y;
+    strcpy(r->corb, corb);
+    strcpy(r->corp, corp);
+    return r;
 }
+
+int getRetanguloId(Retangulo retangulo){
+    Retangulo_S *r = (Retangulo)retangulo;
+    return r->id;
+}
+
 
 double getRetanguloW(Retangulo retangulo){
     Retangulo_S *r = (Retangulo)retangulo;

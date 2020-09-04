@@ -1,9 +1,19 @@
 #ifndef LISTAS_H_
 #define LISTAS_H_
 
+/*referencias usadas para char de identificação:
+    c = circulo;
+    l = linha;
+    a = retangulo;
+    t = texto;
+    h = hidrante;
+    q = quadra;
+    r = radio;
+    s = semaforo;
+*/
+
 typedef void* listaStruct;
 typedef void* tipo;
-
 
 /*inicia a lista*/
 listaStruct *criaLista();
@@ -15,7 +25,7 @@ int tamanhoLista(listaStruct, char);
 listaStruct imprimeLista(listaStruct, char);
 
 /*libera a lista completamente*/
-listaStruct liberaLista();
+listaStruct liberaLista(listaStruct);
 
 /*insere um elemento no final da lista*/
 listaStruct insereElemento(listaStruct, tipo);

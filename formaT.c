@@ -4,6 +4,7 @@
 #include "formaT.h"
 
 typedef struct formaTexto{
+  int id; /*id*/  
   double x; /*pos x*/
   double y; /*pos y*/
   char corb[20]; /*cor da borda*/
@@ -11,14 +12,20 @@ typedef struct formaTexto{
   char text[50]; /*texto*/
 }Texto_S;
 
-Texto criaTexto(double x, double y, char *corb, char *corp, char *text){
+Texto criaTexto(int id, double x, double y, char *corb, char *corp, char *text){
     Texto_S *t =(Texto_S*)malloc(sizeof(Texto_S));
+    t->id = id;
     t->x = x;
     t->y = y;
     strcpy(t->corb, corb);
     strcpy(t->corp, corp);
     strcpy(t->text, text);
     return t;
+}
+
+int getTextoId(Texto texto){
+    Texto_S *t = (Texto)texto;
+    return t->id;
 }
 
 double getTextoX(Texto texto){

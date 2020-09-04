@@ -49,8 +49,16 @@ listaStruct imprimeLista(listaStruct l, char c){
 }
 
 /*libera a lista completamente*/
-listaStruct liberaLista(){
-
+listaStruct liberaLista(listaStruct l){
+    Lista *list = (Lista*)l;
+    No *node = list->primeiro;
+    No *aux;
+        while(node != NULL){
+            aux = l; 
+            l = node->prox; 
+                free(aux->elemento);
+                free(aux);
+        } 
 }
 
 /*insere um elemento no final da lista*/
@@ -112,13 +120,49 @@ listaStruct getNext(int n, listaStruct l, char c){
             if(c == 'r'){
                 if(getRadioId(node->elemento) == n){
                     aux = node->prox;
-                    return aux;
+                    return aux->elemento;
                 }
             }
             else if(c == 'h'){
                 if(getHidranteId(node->elemento) == n){
                     aux = node->prox;
-                    return aux;
+                    return aux->elemento;
+                }
+            }
+            else if(c == 'q'){
+                if(getQuadraCep(node->elemento) == n){
+                    aux = node->prox;
+                    return aux->elemento;
+                }
+            }
+            else if(c == 's'){
+                if(getSemaforoId(node->elemento) == n){
+                    aux = node->prox;
+                    return aux->elemento;
+                }
+            }
+            else if(c == 'c'){
+                if(getTextoId(node->elemento) == n){
+                    aux = node->prox;
+                    return aux->elemento;
+                }
+            }
+            else if(c == 'l'){
+                if(getLinhaId(node->elemento) == n){
+                    aux = node->prox;
+                    return aux->elemento;
+                }
+            }
+            else if(c == 'a'){
+                if(getRetanguloId(node->elemento) == n){
+                    aux = node->prox;
+                    return aux->elemento;
+                }
+            }
+            else if(c == 't'){
+                if(getTextoId(node->elemento) == n){
+                    aux = node->prox;
+                    return aux->elemento;
                 }
             }
             node = node -> prox;
@@ -127,11 +171,71 @@ listaStruct getNext(int n, listaStruct l, char c){
 }
 
 /*retorna o ultimo elemento da lista, se a lista estiver vazia, retorna null*/
-listaStruct getLast(){
-
+listaStruct getLast(listaStruct l){
+    Lista *list = (Lista*)l;
+    No *node = list->ultimo;
+        if(list->ultimo == NULL){
+            return NULL;
+        }
+        
+    return node->elemento;
 }
 
 /*retorna o elemento anterior a posicao inserida*/
-listaStruct getPrevious(){
-
+listaStruct getPrevious(int n, listaStruct l, char c){
+    Lista *list = (Lista*)l;
+    No *node = list->primeiro;
+    No *aux;
+        while (node != NULL){
+           if(c == 'r'){
+                if(getRadioId(node->elemento) == n){
+                    aux = node->ant;
+                    return aux->elemento;
+                }
+            }
+            else if(c == 'h'){
+                if(getHidranteId(node->elemento) == n){
+                    aux = node->ant;
+                    return aux->elemento;
+                }
+            }
+            else if(c == 'q'){
+                if(getQuadraCep(node->elemento) == n){
+                    aux = node->ant;
+                    return aux->elemento;
+                }
+            }
+            else if(c == 's'){
+                if(getSemaforoId(node->elemento) == n){
+                    aux = node->ant;
+                    return aux->elemento;
+                }
+            }
+            else if(c == 'c'){
+                if(getTextoId(node->elemento) == n){
+                    aux = node->ant;
+                    return aux->elemento;
+                }
+            }
+            else if(c == 'l'){
+                if(getLinhaId(node->elemento) == n){
+                    aux = node->ant;
+                    return aux->elemento;
+                }
+            }
+            else if(c == 'a'){
+                if(getRetanguloId(node->elemento) == n){
+                    aux = node->ant;
+                    return aux->elemento;
+                }
+            }
+            else if(c == 't'){
+                if(getTextoId(node->elemento) == n){
+                    aux = node->ant;
+                    return aux->elemento;
+                }
+            }
+            node = node -> prox;
+        }
+    return NULL;
 }

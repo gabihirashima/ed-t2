@@ -4,6 +4,7 @@
 #include "formaC.h"
 
 typedef struct formaCirculo{
+  int id; /*id do circulo*/   
   double r;  /*raio*/
   double x; /*pos x*/
   double y; /*pos y*/
@@ -11,14 +12,20 @@ typedef struct formaCirculo{
   char corp[20]; /*cor de preenchimento*/
 }Circulo_S; 
 
-Circulo criaCirculo(double r, double x, double y, char *corb, char *corp){
+Circulo criaCirculo(int id, double r, double x, double y, char *corb, char *corp){
     Circulo_S *c =(Circulo_S*)malloc(sizeof(Circulo_S));
+    c->id = id;
     c->r = r;
     c->x = x;
     c->y = y;
     strcpy(c->corb, corb);
     strcpy(c->corp, corp);
     return c;
+}
+
+int getCirculoId(Circulo circulo){
+    Circulo_S *c = (Circulo)circulo;
+    return c->id;
 }
 
 double getCirculoR(Circulo circulo){

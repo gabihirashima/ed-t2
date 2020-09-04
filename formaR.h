@@ -3,7 +3,9 @@
 
 typedef void* Retangulo;
 
-Retangulo criaRetangulo(double, double, double, double, char *, char *);
+Retangulo criaRetangulo(int, double, double, double, double, char *, char *);
+
+int getRetanguloId(Retangulo);
 
 double getRetanguloW(Retangulo);
 

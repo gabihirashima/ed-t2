@@ -4,6 +4,7 @@
 #include "formaL.h"
 
 typedef struct formaLinha{
+  int id; /*id*/
   double x; /*pos x*/
   double y; /*pos y*/
   double x2; /*pos x2*/
@@ -11,14 +12,20 @@ typedef struct formaLinha{
   char cor[20];
 }Linha_S;
 
-Linha criaLinha(double x, double y, double x2, double y2, char *cor){
+Linha criaLinha(int id, double x, double y, double x2, double y2, char *cor){
     Linha_S *l =(Linha_S*)malloc(sizeof(Linha_S));
+    l->id = id;
     l->x = x;
     l->y = y;
     l->x2 = x2;
     l->y2 = y2;
     strcpy(l->cor, cor);
     return l;
+}
+
+int getLinhaId(Linha linha){
+    Linha_S *l = (Linha)linha;
+    return l->id;
 }
 
 double getLinhaX(Linha linha){
