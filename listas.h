@@ -19,7 +19,7 @@ typedef void* tipo;
 listaStruct *criaLista();
 
 /*retorna o numero de elementos da lista*/
-int tamanhoLista(listaStruct, char);
+int tamanhoLista(listaStruct);
 
 /*Imprime a lista completamente*/
 listaStruct imprimeLista(listaStruct, char);
@@ -38,7 +38,7 @@ listaStruct getElemento();
 
 /*insere um elemento antes da posicao indicada e retorna o indicador para esse elemento, 
 caso a posição indicada exista*/
-listaStruct insertBefore();
+listaStruct insertBefore(listaStruct, tipo, int, char);
 
 /*insere um elemento depois da posicao indicada e retorna o indicador para esse elemento,
  caso a posição indicada exista*/
@@ -51,9 +51,9 @@ listaStruct getFirst(listaStruct);
 listaStruct getNext(int, listaStruct, char);
 
 /*retorna o ultimo elemento da lista, se a lista estiver vazia, retorna null*/
-listaStruct getLast();
+listaStruct getLast(listaStruct);
 
 /*retorna o elemento anterior a posicao inserida*/
-listaStruct getPrevious();
+listaStruct getPrevious(int, listaStruct, char);
 
 #endif

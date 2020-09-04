@@ -4,6 +4,13 @@
 #include "variaveis.h"
 #include "listas.h"
 #include "radio.h"
+#include "semaforo.h"
+#include "quadra.h"
+#include "hidrante.h"
+#include "formaC.h"
+#include "formaL.h"
+#include "formaT.h"
+#include "formaL.h"
 
 typedef struct no{
     void *elemento;
@@ -25,7 +32,7 @@ listaStruct *criaLista(){
 }
 
 /*retorna o numero de elementos da lista*/
-int tamanhoLista(listaStruct l, char c){
+int tamanhoLista(listaStruct l){
  Lista *list = (Lista*)l;
  int tamanho = 0;
     No *node = list->primeiro;
@@ -58,6 +65,7 @@ listaStruct liberaLista(listaStruct l){
             l = node->prox; 
                 free(aux->elemento);
                 free(aux);
+            node = node -> prox;
         } 
 }
 
@@ -77,7 +85,8 @@ listaStruct insereElemento(listaStruct l, tipo elemento){
         }
 
         node->prox = NULL;
-        list->ultimo = node; 
+        list->ultimo = node;
+    return list; 
 }
 
 /*remove um elemento na lista*/
@@ -85,14 +94,124 @@ listaStruct removeElemento(listaStruct l, tipo elemento, int id){
 
 }
 
-/*retorna o valor do elemento, caso ele exista*/
-listaStruct getElemento(){
-
+/*retorna o conteudo do elemento, caso ele exista*/
+listaStruct getElemento(int n, listaStruct l, char c){
+    Lista *list = (Lista*)l;
+    No *node = list->primeiro;
+        while (node != NULL){
+            if(c == 'r'){
+                if(getRadioId(node->elemento) == n){
+                    return node->elemento;
+                }
+            }
+            else if(c == 'h'){
+                if(getHidranteId(node->elemento) == n){
+                    return node->elemento;
+                }
+            }
+            else if(c == 'q'){
+                if(getQuadraCep(node->elemento) == n){
+                    return node->elemento;
+                }
+            }
+            else if(c == 's'){
+                if(getSemaforoId(node->elemento) == n){
+                    return node->elemento;
+                }
+            }
+            else if(c == 'c'){
+                if(getTextoId(node->elemento) == n){
+                    return node->elemento;
+                }
+            }
+            else if(c == 'l'){
+                if(getLinhaId(node->elemento) == n){
+                    return node->elemento;
+                }
+            }
+            else if(c == 'a'){
+                if(getRetanguloId(node->elemento) == n){
+                    return node->elemento;
+                }
+            }
+            else if(c == 't'){
+                if(getTextoId(node->elemento) == n){
+                    return node->elemento;
+                }
+            }
+            node = node -> prox;
+        }
+    return NULL;
 }
 
 /*insere um elemento antes da posicao indicada e retorna o indicador para esse elemento, caso a posição indicada exista*/
-listaStruct insertBefore(){
-
+listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
+    if((getElemento(id, l, c)) != NULL){
+         Lista *list = (listaStruct)l;
+    
+         No* node = (No*)malloc(sizeof(No));
+         No *inicio = list->primeiro;
+         No *aux_1; 
+         No *aux_2;
+         node->elemento = elemento;
+            while (inicio != NULL){
+                if(c == 'r'){
+                    if(getRadioId(node->elemento) == id){
+                       if(inicio == list->primeiro){
+                            aux_2 = inicio->ant;
+                            aux_1 = inicio;
+                            node->ant = aux_2;
+                            node->prox = aux_1;
+                            list->primeiro = node; 
+                       }
+                       else{
+                            aux_2 = inicio->ant;
+                            aux_1 = inicio;
+                            node->ant = aux_2;
+                            node->prox = aux_1;
+                       }
+                    }
+                    return list;
+                }
+                else if(c == 'h'){
+                    if(getHidranteId(node->elemento) == id){
+                       
+                    }
+                }
+                else if(c == 'q'){
+                    if(getQuadraCep(node->elemento) == id){
+                       
+                    }
+                }
+                else if(c == 's'){
+                    if(getSemaforoId(node->elemento) == id){
+                       
+                    }
+                }
+                else if(c == 'c'){
+                    if(getTextoId(node->elemento) == id){
+                       
+                    }
+                }
+                else if(c == 'l'){
+                    if(getLinhaId(node->elemento) == id){
+                       
+                    }
+                }
+                else if(c == 'a'){
+                    if(getRetanguloId(node->elemento) == id){
+                       
+                    }
+                }
+                else if(c == 't'){
+                    if(getTextoId(node->elemento) == id){
+                       
+                    }
+                }
+                inicio = inicio->prox;
+            }
+    }
+    return NULL;
 }
 
 /*insere um elemento depois da posicao indicada e retorna o indicador para esse elemento, caso a posição indicada exista*/
