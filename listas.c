@@ -116,7 +116,10 @@ listaStruct getNext(int n, listaStruct l, char c){
                 }
             }
             else if(c == 'h'){
-
+                if(getHidranteId(node->elemento) == n){
+                    aux = node->prox;
+                    return aux;
+                }
             }
             node = node -> prox;
         }
