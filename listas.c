@@ -158,17 +158,13 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
                 if(c == 'r'){
                     if(getRadioId(node->elemento) == id){
                        if(inicio == list->primeiro){
-                            aux_2 = inicio->ant;
-                            aux_1 = inicio;
-                            node->ant = aux_2;
-                            node->prox = aux_1;
+                            node->ant = inicio->ant;
+                            node->prox = inicio;
                             list->primeiro = node; 
                        }
                        else{
-                            aux_2 = inicio->ant;
-                            aux_1 = inicio;
-                            node->ant = aux_2;
-                            node->prox = aux_1;
+                            node->ant = inicio->ant;
+                            node->prox = inicio;
                        }
                     }
                     return list;

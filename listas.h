@@ -34,7 +34,7 @@ listaStruct insereElemento(listaStruct, tipo);
 listaStruct removeElemento(listaStruct, tipo, int);
 
 /*retorna o valor do elemento, caso ele exista*/
-listaStruct getElemento();
+listaStruct getElemento(int, listaStruct, char);
 
 /*insere um elemento antes da posicao indicada e retorna o indicador para esse elemento, 
 caso a posição indicada exista*/
