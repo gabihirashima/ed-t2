@@ -177,6 +177,7 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
                             return list; 
                        }
                     }
+                    inicio = inicio->prox;
                 }
                 else if(c == 'h'){
                     if(getHidranteId(node->elemento) == id){
@@ -198,6 +199,7 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
                             return list; 
                        }
                     }
+                    inicio = inicio->prox;
                 }
                 else if(c == 'q'){
                     if(getQuadraCep(node->elemento) == id){
@@ -219,6 +221,7 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
                             return list; 
                        }
                     }
+                    inicio = inicio->prox;
                 }
                 else if(c == 's'){
                     if(getSemaforoId(node->elemento) == id){
@@ -240,6 +243,7 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
                             return list; 
                        }
                     }
+                    inicio = inicio->prox;
                 }
                 else if(c == 'c'){
                     if(getTextoId(node->elemento) == id){
@@ -261,6 +265,7 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
                             return list; 
                        }
                     }
+                    inicio = inicio->prox;
                 }
                 else if(c == 'l'){
                     if(getLinhaId(node->elemento) == id){
@@ -282,6 +287,7 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
                             return list; 
                        }
                     }
+                    inicio = inicio->prox;
                 }
                 else if(c == 'a'){
                     if(getRetanguloId(node->elemento) == id){
@@ -303,6 +309,7 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
                             return list; 
                        }
                     }
+                    inicio = inicio->prox;
                 }
                 else if(c == 't'){
                     if(getTextoId(node->elemento) == id){
@@ -324,9 +331,7 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
                             return list; 
                        }
                     }
-                }
-                else{
-                inicio = inicio->prox;
+                    inicio = inicio->prox;
                 }
             }
     }
@@ -366,6 +371,7 @@ listaStruct insertAfter(listaStruct l, tipo elemento, int id, char c){
                             return list; 
                        }
                     }
+                    inicio = inicio->prox;
                 }
                 else if(c == 'h'){
                     if(getHidranteId(node->elemento) == id){
@@ -387,6 +393,7 @@ listaStruct insertAfter(listaStruct l, tipo elemento, int id, char c){
                             return list; 
                        }
                     }
+                    inicio = inicio->prox;
                 }
                 else if(c == 'q'){
                     if(getQuadraCep(node->elemento) == id){
@@ -408,6 +415,7 @@ listaStruct insertAfter(listaStruct l, tipo elemento, int id, char c){
                             return list; 
                        }
                     }
+                    inicio = inicio->prox;
                 }
                 else if(c == 's'){
                     if(getSemaforoId(node->elemento) == id){
@@ -429,6 +437,7 @@ listaStruct insertAfter(listaStruct l, tipo elemento, int id, char c){
                             return list; 
                        }
                     }
+                    inicio = inicio->prox;
                 }
                 else if(c == 'c'){
                     if(getTextoId(node->elemento) == id){
@@ -450,6 +459,7 @@ listaStruct insertAfter(listaStruct l, tipo elemento, int id, char c){
                             return list; 
                        }
                     }
+                    inicio = inicio->prox;
                 }
                 else if(c == 'l'){
                     if(getLinhaId(node->elemento) == id){
@@ -471,6 +481,7 @@ listaStruct insertAfter(listaStruct l, tipo elemento, int id, char c){
                             return list; 
                        }
                     }
+                    inicio = inicio->prox;
                 }
                 else if(c == 'a'){
                     if(getRetanguloId(node->elemento) == id){
@@ -492,6 +503,7 @@ listaStruct insertAfter(listaStruct l, tipo elemento, int id, char c){
                             return list; 
                        }
                     }
+                    inicio = inicio->prox;
                 }
                 else if(c == 't'){
                     if(getTextoId(node->elemento) == id){
@@ -513,9 +525,7 @@ listaStruct insertAfter(listaStruct l, tipo elemento, int id, char c){
                             return list; 
                        }
                     }
-                }
-                else{
-                inicio = inicio->prox;
+                    inicio = inicio->prox;
                 }
             }
     }
