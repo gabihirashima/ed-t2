@@ -56,7 +56,7 @@ void imprimeLista(listaStruct l, char c){
 }
 
 /*libera a lista completamente*/
-listaStruct liberaLista(listaStruct l){
+void liberaLista(listaStruct l){
     Lista *list = (Lista*)l;
     No *node = list->primeiro;
     No *aux;

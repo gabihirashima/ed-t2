@@ -25,7 +25,7 @@ int tamanhoLista(listaStruct);
 void imprimeLista(listaStruct, char);
 
 /*libera a lista completamente*/
-listaStruct liberaLista(listaStruct);
+void liberaLista(listaStruct);
 
 /*insere um elemento no final da lista*/
 listaStruct insereElemento(listaStruct, tipo);
