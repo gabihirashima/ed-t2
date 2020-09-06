@@ -171,8 +171,8 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
                             aux_2 = inicio->ant;
                             node->ant = aux_2;
                             node->prox = aux_1;
-                            inicio->ant = node;
-                            inicio->ant->prox = node; 
+                            aux_1 = node;
+                            aux_2 = node; 
                        }
                     }
                     return list;
