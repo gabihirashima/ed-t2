@@ -99,17 +99,20 @@ listaStruct removeElemento(listaStruct l, tipo elemento, int id, char c){
          
          No *inicio = list->primeiro;
          No *aux_1;
-         No *aux_2; 
+         No *aux_2;
+         No *aux_3; 
 
             while (inicio != NULL){
                 if(c == 'r'){
                     if(getRadioId(inicio->elemento) == id){
                         aux_1 = inicio->prox;
                         aux_2 = inicio->ant;
+                        aux_3 = inicio;
                         aux_2->prox = aux_1;
                         aux_1->ant = aux_2;
-                        free(inicio->elemento);
-                        free(inicio);
+                        free(aux_3->elemento);
+                        free(aux_3);
+                        return list;
                     }
                     inicio = inicio->prox;
                 }
@@ -155,7 +158,6 @@ listaStruct removeElemento(listaStruct l, tipo elemento, int id, char c){
                     inicio = inicio->prox;
                 }
             }
-    }
     return NULL;
 }
 
