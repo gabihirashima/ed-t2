@@ -42,7 +42,7 @@ listaStruct insertBefore(listaStruct, tipo, int, char);
 
 /*insere um elemento depois da posicao indicada e retorna o indicador para esse elemento,
  caso a posição indicada exista*/
-listaStruct insertAfter();
+listaStruct insertAfter(listaStruct l, tipo elemento, int id, char c);
 
 /*retorna o primeiro elemento da lista, se a lista estiver vazia retorna null*/
 listaStruct getFirst(listaStruct);

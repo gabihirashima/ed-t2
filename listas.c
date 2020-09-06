@@ -334,8 +334,8 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
 }
 
 /*insere um elemento depois da posicao indicada e retorna o indicador para esse elemento, caso a posição indicada exista*/
-listaStruct insertAfter(){
-if((getElemento(id, l, c)) != NULL){
+listaStruct insertAfter(listaStruct l, tipo elemento, int id, char c){
+    if((getElemento(id, l, c)) != NULL){
          Lista *list = (listaStruct)l;
     
          No* node = (No*)malloc(sizeof(No));
@@ -351,165 +351,165 @@ if((getElemento(id, l, c)) != NULL){
                        if(inicio == list->ultimo){
                             aux_1 = inicio;
                             aux_1->prox = node;
-                            node->ant = aux_1;
                             node->prox = NULL;
+                            node->ant = aux_1;
                             list->ultimo = node;
                             return list; 
                         }
                        else if(inicio!= list->ultimo){
                             aux_1 = inicio;
                             aux_2 = inicio->prox;
-                            node->ant = aux_1;
-                            node->prox = aux_2;
                             aux_1->prox = node;
                             aux_2->ant = node;
+                            node->ant = aux_1;
+                            node->prox = aux_2;
                             return list; 
                        }
                     }
                 }
                 else if(c == 'h'){
                     if(getHidranteId(node->elemento) == id){
-                       if(inicio == list->ultimo){
+                       if(inicio == list->primeiro){
                             aux_1 = inicio;
-                            aux_1->prox = node;
-                            node->ant = aux_1;
-                            node->prox = NULL;
-                            list->ultimo = node;
+                            aux_1->ant = node;
+                            node->prox = aux_1;
+                            node->ant = NULL;
+                            list->primeiro = node;
                             return list; 
                         }
-                       else if(inicio!= list->ultimo){
+                       else if(inicio!= list->primeiro){
                             aux_1 = inicio;
-                            aux_2 = inicio->prox;
-                            node->ant = aux_1;
-                            node->prox = aux_2;
-                            aux_1->prox = node;
-                            aux_2->ant = node;
+                            aux_2 = inicio->ant;
+                            node->ant = aux_2;
+                            node->prox = aux_1;
+                            aux_1->ant = node;
+                            aux_2->prox = node;
                             return list; 
                        }
                     }
                 }
                 else if(c == 'q'){
                     if(getQuadraCep(node->elemento) == id){
-                       if(inicio == list->ultimo){
+                       if(inicio == list->primeiro){
                             aux_1 = inicio;
-                            aux_1->prox = node;
-                            node->ant = aux_1;
-                            node->prox = NULL;
-                            list->ultimo = node;
+                            aux_1->ant = node;
+                            node->prox = aux_1;
+                            node->ant = NULL;
+                            list->primeiro = node;
                             return list; 
                         }
-                       else if(inicio!= list->ultimo){
+                       else if(inicio!= list->primeiro){
                             aux_1 = inicio;
-                            aux_2 = inicio->prox;
-                            node->ant = aux_1;
-                            node->prox = aux_2;
-                            aux_1->prox = node;
-                            aux_2->ant = node;
+                            aux_2 = inicio->ant;
+                            node->ant = aux_2;
+                            node->prox = aux_1;
+                            aux_1->ant = node;
+                            aux_2->prox = node;
                             return list; 
                        }
                     }
                 }
                 else if(c == 's'){
                     if(getSemaforoId(node->elemento) == id){
-                      if(inicio == list->ultimo){
+                       if(inicio == list->primeiro){
                             aux_1 = inicio;
-                            aux_1->prox = node;
-                            node->ant = aux_1;
-                            node->prox = NULL;
-                            list->ultimo = node;
+                            aux_1->ant = node;
+                            node->prox = aux_1;
+                            node->ant = NULL;
+                            list->primeiro = node;
                             return list; 
                         }
-                       else if(inicio!= list->ultimo){
+                       else if(inicio!= list->primeiro){
                             aux_1 = inicio;
-                            aux_2 = inicio->prox;
-                            node->ant = aux_1;
-                            node->prox = aux_2;
-                            aux_1->prox = node;
-                            aux_2->ant = node;
+                            aux_2 = inicio->ant;
+                            node->ant = aux_2;
+                            node->prox = aux_1;
+                            aux_1->ant = node;
+                            aux_2->prox = node;
                             return list; 
                        }
                     }
                 }
                 else if(c == 'c'){
                     if(getTextoId(node->elemento) == id){
-                      if(inicio == list->ultimo){
+                       if(inicio == list->primeiro){
                             aux_1 = inicio;
-                            aux_1->prox = node;
-                            node->ant = aux_1;
-                            node->prox = NULL;
-                            list->ultimo = node;
+                            aux_1->ant = node;
+                            node->prox = aux_1;
+                            node->ant = NULL;
+                            list->primeiro = node;
                             return list; 
                         }
-                       else if(inicio!= list->ultimo){
+                       else if(inicio!= list->primeiro){
                             aux_1 = inicio;
-                            aux_2 = inicio->prox;
-                            node->ant = aux_1;
-                            node->prox = aux_2;
-                            aux_1->prox = node;
-                            aux_2->ant = node;
+                            aux_2 = inicio->ant;
+                            node->ant = aux_2;
+                            node->prox = aux_1;
+                            aux_1->ant = node;
+                            aux_2->prox = node;
                             return list; 
                        }
                     }
                 }
                 else if(c == 'l'){
                     if(getLinhaId(node->elemento) == id){
-                      if(inicio == list->ultimo){
+                       if(inicio == list->primeiro){
                             aux_1 = inicio;
-                            aux_1->prox = node;
-                            node->ant = aux_1;
-                            node->prox = NULL;
-                            list->ultimo = node;
+                            aux_1->ant = node;
+                            node->prox = aux_1;
+                            node->ant = NULL;
+                            list->primeiro = node;
                             return list; 
                         }
-                       else if(inicio!= list->ultimo){
+                       else if(inicio!= list->primeiro){
                             aux_1 = inicio;
-                            aux_2 = inicio->prox;
-                            node->ant = aux_1;
-                            node->prox = aux_2;
-                            aux_1->prox = node;
-                            aux_2->ant = node;
+                            aux_2 = inicio->ant;
+                            node->ant = aux_2;
+                            node->prox = aux_1;
+                            aux_1->ant = node;
+                            aux_2->prox = node;
                             return list; 
                        }
                     }
                 }
                 else if(c == 'a'){
                     if(getRetanguloId(node->elemento) == id){
-                       if(inicio == list->ultimo){
+                       if(inicio == list->primeiro){
                             aux_1 = inicio;
-                            aux_1->prox = node;
-                            node->ant = aux_1;
-                            node->prox = NULL;
-                            list->ultimo = node;
+                            aux_1->ant = node;
+                            node->prox = aux_1;
+                            node->ant = NULL;
+                            list->primeiro = node;
                             return list; 
                         }
-                       else if(inicio!= list->ultimo){
+                       else if(inicio!= list->primeiro){
                             aux_1 = inicio;
-                            aux_2 = inicio->prox;
-                            node->ant = aux_1;
-                            node->prox = aux_2;
-                            aux_1->prox = node;
-                            aux_2->ant = node;
+                            aux_2 = inicio->ant;
+                            node->ant = aux_2;
+                            node->prox = aux_1;
+                            aux_1->ant = node;
+                            aux_2->prox = node;
                             return list; 
                        }
                     }
                 }
                 else if(c == 't'){
                     if(getTextoId(node->elemento) == id){
-                       if(inicio == list->ultimo){
+                       if(inicio == list->primeiro){
                             aux_1 = inicio;
-                            aux_1->prox = node;
-                            node->ant = aux_1;
-                            node->prox = NULL;
-                            list->ultimo = node;
+                            aux_1->ant = node;
+                            node->prox = aux_1;
+                            node->ant = NULL;
+                            list->primeiro = node;
                             return list; 
                         }
-                       else if(inicio!= list->ultimo){
+                       else if(inicio!= list->primeiro){
                             aux_1 = inicio;
-                            aux_2 = inicio->prox;
-                            node->ant = aux_1;
-                            node->prox = aux_2;
-                            aux_1->prox = node;
-                            aux_2->ant = node;
+                            aux_2 = inicio->ant;
+                            node->ant = aux_2;
+                            node->prox = aux_1;
+                            aux_1->ant = node;
+                            aux_2->prox = node;
                             return list; 
                        }
                     }
