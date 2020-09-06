@@ -16,13 +16,13 @@ typedef void* listaStruct;
 typedef void* tipo;
 
 /*inicia a lista*/
-listaStruct *criaLista();
+listaStruct criaLista();
 
 /*retorna o numero de elementos da lista*/
 int tamanhoLista(listaStruct);
 
 /*Imprime a lista completamente*/
-listaStruct imprimeLista(listaStruct, char);
+void imprimeLista(listaStruct, char);
 
 /*libera a lista completamente*/
 listaStruct liberaLista(listaStruct);
@@ -31,7 +31,7 @@ listaStruct liberaLista(listaStruct);
 listaStruct insereElemento(listaStruct, tipo);
 
 /*remove um elemento na listaStruct*/
-listaStruct removeElemento(listaStruct, tipo, int, char);
+listaStruct removeElemento(listaStruct, int, char);
 
 /*retorna o valor do elemento, caso ele exista*/
 listaStruct getElemento(int, listaStruct, char);

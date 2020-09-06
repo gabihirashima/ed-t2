@@ -12,7 +12,7 @@
 #include "formaT.h"
 
 
-void main(int argc, char *argv[]){
+int main(int argc, char *argv[]){
     listaStruct listaR = criaLista();
     tipo elemento; 
     int tamanho;
@@ -29,7 +29,8 @@ void main(int argc, char *argv[]){
     listaR = insertBefore(listaR, elemento, 2, 'r');
     imprimeLista(listaR, 'r');
     tamanho = tamanhoLista(listaR);
-    removeElemento(listaR, elemento, 4, 'r');
     printf("\ntamanho da lista: %d", tamanho);
     liberaLista(listaR);
+
+    return 0;
 }

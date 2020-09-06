@@ -24,7 +24,7 @@ typedef struct lista{
 }Lista;
 
 /*inicia a lista*/
-listaStruct *criaLista(){
+listaStruct criaLista(){
     Lista *list = (Lista*)malloc(sizeof(Lista));
     list->primeiro = NULL;
     list->ultimo = NULL;
@@ -44,7 +44,7 @@ int tamanhoLista(listaStruct l){
 }
 
 /*Imprime a lista completamente*/
-listaStruct imprimeLista(listaStruct l, char c){
+void imprimeLista(listaStruct l, char c){
     Lista *list = (Lista*)l;
     No *node = list->primeiro;
         while(node != NULL){
@@ -90,75 +90,48 @@ listaStruct insereElemento(listaStruct l, tipo elemento){
 }
 
 /*remove um elemento na lista*/
-listaStruct removeElemento(listaStruct l, tipo elemento, int id, char c){
-  if((getElemento(id, l, c)) != NULL){
-         Lista *list = (listaStruct)l;
-    
-         No* node = (No*)malloc(sizeof(No));
-         node->elemento = elemento;
+listaStruct removeElemento(listaStruct l, int id, char c){
+    if(getElemento(id, l, c) != 0){
+        Lista *list = (listaStruct)l;
          
          No *inicio = list->primeiro;
-         No *aux_1;
+         No *aux_1; 
          No *aux_2;
-         No *aux_3; 
-
-            while (inicio != NULL){
+         No *aux_3;
+         while (inicio != NULL){
                 if(c == 'r'){
                     if(getRadioId(inicio->elemento) == id){
-                        aux_1 = inicio->prox;
-                        aux_2 = inicio->ant;
-                        aux_3 = inicio;
-                        aux_2->prox = aux_1;
-                        aux_1->ant = aux_2;
-                        free(aux_3->elemento);
-                        free(aux_3);
-                        return list;
+                       if(inicio == list->primeiro){
+                           aux_1 = inicio;
+                           aux_2 = inicio->prox;
+                           aux_2->ant = NULL;
+                           list->primeiro = aux_2;
+                           free(aux_1->elemento);
+                           free(aux_1);
+                       }
+                       else if(inicio == list->ultimo){
+                           aux_1 = inicio;
+                           aux_2 = inicio->ant;
+                           aux_2->prox = NULL;
+                           list->ultimo = aux_2;
+                           free(aux_1->elemento);
+                           free(aux_1);
+                       }
+                       else{
+                           aux_1 = inicio;
+                           aux_2 = inicio->prox;
+                           aux_3 = inicio->ant;
+                           aux_2->ant = aux_3;
+                           aux_3->prox = aux_2;
+                           free(aux_1->elemento);
+                           free(aux_1);
+                       }
                     }
                     inicio = inicio->prox;
                 }
-                else if(c == 'h'){
-                 
-                    }
-                    inicio = inicio->prox;
-                }
-                else if(c == 'q'){
-                    if(getQuadraCep(node->elemento) == id){
-                    
-                    }
-                    inicio = inicio->prox;
-                }
-                else if(c == 's'){
-                    if(getSemaforoId(node->elemento) == id){
-                     
-                    }
-                    inicio = inicio->prox;
-                }
-                else if(c == 'c'){
-                    if(getTextoId(node->elemento) == id){
-                      
-                    }
-                    inicio = inicio->prox;
-                }
-                else if(c == 'l'){
-                    if(getLinhaId(node->elemento) == id){
-                      
-                    }
-                    inicio = inicio->prox;
-                }
-                else if(c == 'a'){
-                    if(getRetanguloId(node->elemento) == id){
-                       
-                    }
-                    inicio = inicio->prox;
-                }
-                else if(c == 't'){
-                    if(getTextoId(node->elemento) == id){
-                   
-                    }
-                    inicio = inicio->prox;
-                }
-            }
-    return NULL;
+        }
+    }
+    return NULL;  
 }
 
 /*retorna o conteudo do elemento, caso ele exista*/

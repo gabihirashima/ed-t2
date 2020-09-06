@@ -92,19 +92,19 @@ listaStruct openGeo(){
             }
 
             else if(strcmp(comando, "ch") == 0){
-                 fscanf(arq, "%lf %s %s", &sw, &cfillH, &cstrkH);
+                 fscanf(arq, "%lf %s %s", &sw, cfillH, cstrkH);
             }
 
             else if(strcmp(comando, "cr") == 0){
-                 fscanf(arq, "%lf %s %s", &sw, &cfillR, &cstrkR);
+                 fscanf(arq, "%lf %s %s", &sw, cfillR, cstrkR);
             }
 
             else if(strcmp(comando, "cs") == 0){
-                 fscanf(arq, "%lf %s %s", &sw, &cfillS, &cstrkS);
+                 fscanf(arq, "%lf %s %s", &sw, cfillS, cstrkS);
             }
 
             else if(strcmp(comando, "cq") == 0){
-                 fscanf(arq, "%lf %s %s", &sw, &cfillQ, &cstrkQ);
+                 fscanf(arq, "%lf %s %s", &sw, cfillQ, cstrkQ);
             }
 
             else if(strcmp(comando, "sw") == 0){
