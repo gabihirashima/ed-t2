@@ -212,7 +212,9 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
                        
                     }
                 }
+                else{
                 inicio = inicio->prox;
+                }
             }
     }
     return NULL;

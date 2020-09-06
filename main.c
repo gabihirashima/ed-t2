@@ -26,7 +26,7 @@ void main(int argc, char *argv[]){
     listaR = insereElemento(listaR, elemento);
     imprimeLista(listaR, 'r');
     elemento = criaRadio(4, 24.7, 5.8, "rosa", "roxo");
-    listaR = insertBefore(listaR, elemento, 2, 'r');
+    listaR = insertBefore(listaR, elemento, 1, 'r');
     tamanho = tamanhoLista(listaR);
     printf("\ntamanho da lista: %d", tamanho);
     liberaLista(listaR);
