@@ -3,6 +3,13 @@
 #include "variaveis.h"
 #include "listas.h"
 #include "radio.h"
+#include "semaforo.h"
+#include "quadra.h"
+#include "hidrante.h"
+#include "formaC.h"
+#include "formaL.h"
+#include "formaR.h"
+#include "formaT.h"
 
 
 void main(int argc, char *argv[]){
