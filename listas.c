@@ -98,38 +98,263 @@ listaStruct removeElemento(listaStruct l, int id, char c){
          No *aux_1; 
          No *aux_2;
          No *aux_3;
-         while (inicio != NULL){
+         while (inicio != NULL){        
                 if(c == 'r'){
                     if(getRadioId(inicio->elemento) == id){
-                       if(inicio == list->primeiro){
-                           aux_1 = inicio;
-                           aux_2 = inicio->prox;
-                           aux_2->ant = NULL;
-                           list->primeiro = aux_2;
-                           free(aux_1->elemento);
-                           free(aux_1);
-                       }
-                       else if(inicio == list->ultimo){
-                           aux_1 = inicio;
-                           aux_2 = inicio->ant;
-                           aux_2->prox = NULL;
-                           list->ultimo = aux_2;
-                           free(aux_1->elemento);
-                           free(aux_1);
-                       }
-                       else{
-                           aux_1 = inicio;
-                           aux_2 = inicio->prox;
-                           aux_3 = inicio->ant;
-                           aux_2->ant = aux_3;
-                           aux_3->prox = aux_2;
-                           free(aux_1->elemento);
-                           free(aux_1);
-                       }
+                        if(inicio == list->primeiro){
+                            aux_1 = inicio;
+                            aux_2 = inicio->prox;
+                            aux_2->ant = NULL;
+                            list->primeiro = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        else if(inicio == list->ultimo){
+                            aux_1 = inicio;
+                            aux_2 = inicio->ant;
+                            aux_2->prox = NULL;
+                            list->ultimo = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        else{
+                            aux_1 = inicio;
+                            aux_2 = inicio->prox;
+                            aux_3 = inicio->ant;
+                            aux_2->ant = aux_3;
+                            aux_3->prox = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        return list;
                     }
                     inicio = inicio->prox;
                 }
-        }
+
+                if(c == 's'){
+                    if(getSemaforoId(inicio->elemento) == id){
+                        if(inicio == list->primeiro){
+                            aux_1 = inicio;
+                            aux_2 = inicio->prox;
+                            aux_2->ant = NULL;
+                            list->primeiro = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        else if(inicio == list->ultimo){
+                            aux_1 = inicio;
+                            aux_2 = inicio->ant;
+                            aux_2->prox = NULL;
+                            list->ultimo = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        else{
+                            aux_1 = inicio;
+                            aux_2 = inicio->prox;
+                            aux_3 = inicio->ant;
+                            aux_2->ant = aux_3;
+                            aux_3->prox = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        return list;
+                    }
+                    inicio = inicio->prox;
+                }
+
+                if(c == 'q'){
+                    if(getQuadraCep(inicio->elemento) == id){
+                        if(inicio == list->primeiro){
+                            aux_1 = inicio;
+                            aux_2 = inicio->prox;
+                            aux_2->ant = NULL;
+                            list->primeiro = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        else if(inicio == list->ultimo){
+                            aux_1 = inicio;
+                            aux_2 = inicio->ant;
+                            aux_2->prox = NULL;
+                            list->ultimo = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        else{
+                            aux_1 = inicio;
+                            aux_2 = inicio->prox;
+                            aux_3 = inicio->ant;
+                            aux_2->ant = aux_3;
+                            aux_3->prox = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        return list;
+                    }
+                    inicio = inicio->prox;
+                }
+
+                if(c == 'h'){
+                    if(getHidranteId(inicio->elemento) == id){
+                        if(inicio == list->primeiro){
+                            aux_1 = inicio;
+                            aux_2 = inicio->prox;
+                            aux_2->ant = NULL;
+                            list->primeiro = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        else if(inicio == list->ultimo){
+                            aux_1 = inicio;
+                            aux_2 = inicio->ant;
+                            aux_2->prox = NULL;
+                            list->ultimo = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        else{
+                            aux_1 = inicio;
+                            aux_2 = inicio->prox;
+                            aux_3 = inicio->ant;
+                            aux_2->ant = aux_3;
+                            aux_3->prox = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        return list;
+                    }
+                    inicio = inicio->prox;
+                }
+
+                if(c == 'c'){
+                    if(getCirculoId(inicio->elemento) == id){
+                        if(inicio == list->primeiro){
+                            aux_1 = inicio;
+                            aux_2 = inicio->prox;
+                            aux_2->ant = NULL;
+                            list->primeiro = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        else if(inicio == list->ultimo){
+                            aux_1 = inicio;
+                            aux_2 = inicio->ant;
+                            aux_2->prox = NULL;
+                            list->ultimo = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        else{
+                            aux_1 = inicio;
+                            aux_2 = inicio->prox;
+                            aux_3 = inicio->ant;
+                            aux_2->ant = aux_3;
+                            aux_3->prox = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        return list;
+                    }
+                    inicio = inicio->prox;
+                }
+
+                if(c == 'l'){
+                    if(getLinhaId(inicio->elemento) == id){
+                        if(inicio == list->primeiro){
+                            aux_1 = inicio;
+                            aux_2 = inicio->prox;
+                            aux_2->ant = NULL;
+                            list->primeiro = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        else if(inicio == list->ultimo){
+                            aux_1 = inicio;
+                            aux_2 = inicio->ant;
+                            aux_2->prox = NULL;
+                            list->ultimo = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        else{
+                            aux_1 = inicio;
+                            aux_2 = inicio->prox;
+                            aux_3 = inicio->ant;
+                            aux_2->ant = aux_3;
+                            aux_3->prox = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        return list;
+                    }
+                    inicio = inicio->prox;
+                }
+
+                if(c == 'a'){
+                    if(getRetanguloId(inicio->elemento) == id){
+                        if(inicio == list->primeiro){
+                            aux_1 = inicio;
+                            aux_2 = inicio->prox;
+                            aux_2->ant = NULL;
+                            list->primeiro = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        else if(inicio == list->ultimo){
+                            aux_1 = inicio;
+                            aux_2 = inicio->ant;
+                            aux_2->prox = NULL;
+                            list->ultimo = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        else{
+                            aux_1 = inicio;
+                            aux_2 = inicio->prox;
+                            aux_3 = inicio->ant;
+                            aux_2->ant = aux_3;
+                            aux_3->prox = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        return list;
+                    }
+                    inicio = inicio->prox;
+                }
+
+                if(c == 't'){
+                    if(getTextoId(inicio->elemento) == id){
+                        if(inicio == list->primeiro){
+                            aux_1 = inicio;
+                            aux_2 = inicio->prox;
+                            aux_2->ant = NULL;
+                            list->primeiro = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        else if(inicio == list->ultimo){
+                            aux_1 = inicio;
+                            aux_2 = inicio->ant;
+                            aux_2->prox = NULL;
+                            list->ultimo = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        else{
+                            aux_1 = inicio;
+                            aux_2 = inicio->prox;
+                            aux_3 = inicio->ant;
+                            aux_2->ant = aux_3;
+                            aux_3->prox = aux_2;
+                            free(aux_1->elemento);
+                            free(aux_1);
+                        }
+                        return list;
+                    }
+                    inicio = inicio->prox;
+                }
+            }
     }
     return NULL;  
 }
