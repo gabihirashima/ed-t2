@@ -90,8 +90,73 @@ listaStruct insereElemento(listaStruct l, tipo elemento){
 }
 
 /*remove um elemento na lista*/
-listaStruct removeElemento(listaStruct l, tipo elemento, int id){
+listaStruct removeElemento(listaStruct l, tipo elemento, int id, char c){
+  if((getElemento(id, l, c)) != NULL){
+         Lista *list = (listaStruct)l;
+    
+         No* node = (No*)malloc(sizeof(No));
+         node->elemento = elemento;
+         
+         No *inicio = list->primeiro;
+         No *aux_1;
+         No *aux_2; 
 
+            while (inicio != NULL){
+                if(c == 'r'){
+                    if(getRadioId(inicio->elemento) == id){
+                        aux_1 = inicio->prox;
+                        aux_2 = inicio->ant;
+                        aux_2->prox = aux_1;
+                        aux_1->ant = aux_2;
+                        free(inicio->elemento);
+                        free(inicio);
+                    }
+                    inicio = inicio->prox;
+                }
+                else if(c == 'h'){
+                 
+                    }
+                    inicio = inicio->prox;
+                }
+                else if(c == 'q'){
+                    if(getQuadraCep(node->elemento) == id){
+                    
+                    }
+                    inicio = inicio->prox;
+                }
+                else if(c == 's'){
+                    if(getSemaforoId(node->elemento) == id){
+                     
+                    }
+                    inicio = inicio->prox;
+                }
+                else if(c == 'c'){
+                    if(getTextoId(node->elemento) == id){
+                      
+                    }
+                    inicio = inicio->prox;
+                }
+                else if(c == 'l'){
+                    if(getLinhaId(node->elemento) == id){
+                      
+                    }
+                    inicio = inicio->prox;
+                }
+                else if(c == 'a'){
+                    if(getRetanguloId(node->elemento) == id){
+                       
+                    }
+                    inicio = inicio->prox;
+                }
+                else if(c == 't'){
+                    if(getTextoId(node->elemento) == id){
+                   
+                    }
+                    inicio = inicio->prox;
+                }
+            }
+    }
+    return NULL;
 }
 
 /*retorna o conteudo do elemento, caso ele exista*/

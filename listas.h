@@ -31,7 +31,7 @@ listaStruct liberaLista(listaStruct);
 listaStruct insereElemento(listaStruct, tipo);
 
 /*remove um elemento na listaStruct*/
-listaStruct removeElemento(listaStruct, tipo, int);
+listaStruct removeElemento(listaStruct, tipo, int, char);
 
 /*retorna o valor do elemento, caso ele exista*/
 listaStruct getElemento(int, listaStruct, char);
