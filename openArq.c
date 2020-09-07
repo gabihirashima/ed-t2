@@ -63,7 +63,6 @@ listaCirculos listaC, listaRetangulos listaA, listaTexto listaT)
         }
     
         while(fscanf(arq, "%s", comando) != EOF){
-            while(cont_i < i &&  nq < cont_nq && nh < cont_nh && ns < cont_ns && nr < cont_nr){
                 if(strcmp(comando, "nx") == 0){
                     fscanf(arq, "%d %d %d %d %d\n", &i, &nq, &nh, &ns, &nr);
                 }
@@ -136,8 +135,7 @@ listaCirculos listaC, listaRetangulos listaA, listaTexto listaT)
                     fscanf(arq, "%s %s", cw, rw);
                 }
             }
-            printf("\nExcesso de elementos no arquivo geo.");
-        }
+        
         
 
     fclose(arq);
