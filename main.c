@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "variaveis.h"
 #include "listas.h"
 #include "radio.h"

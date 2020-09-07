@@ -67,14 +67,14 @@ listaCirculos listaC, listaRetangulos listaA, listaTexto listaT)
                     fscanf(arq, "%d %d %d %d %d\n", &i, &nq, &nh, &ns, &nr);
                 }
 
-                else if(strcmp(comando, "c") == 0){
+                else if((strcmp(comando, "c") == 0) && cont_i < i){
                     fscanf(arq, "%d %lf %lf %lf %s %s", &id_forma, &r, &x, &y, corb, corp); 
                     elemento = criaCirculo(id_forma, r, x, y, corb, corp);
                     listaC = insereElemento(listaC, elemento);
                     cont_i += 1;
                 }
 
-                else if(strcmp(comando, "r") == 0){
+                else if((strcmp(comando, "r") == 0) && cont_i < i){
                     fscanf(arq, "%d %lf %lf %lf %lf %s %s", &id_forma, &w, &h, &x, &y, corb, corp); 
                     elemento = criaRetangulo(id_forma, w, h, x, y, corb, corp);
                     listaA = insereElemento(listaA, elemento);
@@ -87,28 +87,28 @@ listaCirculos listaC, listaRetangulos listaA, listaTexto listaT)
                     listaT = insereElemento(listaT, elemento);
                 }
 
-                else if(strcmp(comando, "q") == 0){
+                else if((strcmp(comando, "q") == 0) && cont_nq < nq){
                     fscanf(arq, "%s %lf %lf %lf %lf", cep, &x, &y ,&w ,&h);
                     elemento = criaQuadra(cep, x, y, w, h, cfillQ, cstrkQ);
                     listaQ = insereElemento(listaQ, elemento);
                     cont_nq += 1;
                 }
 
-                else if(strcmp(comando, "h") == 0){
+                else if((strcmp(comando, "h") == 0) && cont_nh < nh){
                     fscanf(arq, "%s %lf %lf", id, &x, &y);
                     elemento = criaHidrante(id, x, y, cfillH, cstrkH);
                     listaH = insereElemento(listaH, elemento);
                     cont_nh += 1;
                 }
 
-                else if(strcmp(comando, "s") == 0){
+                else if((strcmp(comando, "s") == 0) && cont_ns < ns){
                     fscanf(arq, "%s %lf %lf", id, &x, &y);
                     elemento = criaSemaforo(id, x, y, cfillS, cstrkS);
                     listaS = insereElemento(listaS, elemento);
                     cont_ns += 1;
                 }
 
-                else if(strcmp(comando, "rb") == 0){
+                else if((strcmp(comando, "rb") == 0) && cont_nr < nr){
                     fscanf(arq, "%s %lf %lf", id, &x, &y);
                     elemento = criaRadio(id, x, y, cfillR, cstrkR);
                     listaR = insereElemento(listaR, elemento);
@@ -139,4 +139,9 @@ listaCirculos listaC, listaRetangulos listaA, listaTexto listaT)
         
 
     fclose(arq);
+}
+
+void openQry(listaRadios listaR, listaQuadras listaQ, listaHidrantes listaH, listaSemaforos listaS,
+listaCirculos listaC, listaRetangulos listaA, listaTexto listaT){
+
 }
