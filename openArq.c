@@ -27,11 +27,12 @@ listaCirculos listaC, listaRetangulos listaA, listaTexto listaT)
     char cfillR[20];
     char cstrkS[20];
     char cfillS[20];
-    char corb[20];
-    char corp[20];
-    char text[20];
+    char *corb;
+    char *corp;
+    char *text;
     char *id;
     char *cep;
+    int id_forma;
     int i = 1000;
     int nq = 1000;
     int nh = 1000;
@@ -67,22 +68,22 @@ listaCirculos listaC, listaRetangulos listaA, listaTexto listaT)
             }
 
             else if(strcmp(comando, "c") == 0){
-                fscanf(arq, "%d %lf %lf %lf %s %s", &id, &r, &x, &y, corb, corp); 
-                elemento = criaCirculo(id, r, x, y, corb, corp);
+                fscanf(arq, "%d %lf %lf %lf %s %s", &id_forma, &r, &x, &y, corb, corp); 
+                elemento = criaCirculo(id_forma, r, x, y, corb, corp);
                 listaC = insereElemento(listaC, elemento);
                 cont_i += 1;
             }
 
-            else if(strcmp(comando, "a") == 0){
-                fscanf(arq, "%d %lf %lf %lf %lf %s %s", &id, &w, &h, &x, &y, corb, corp); 
-                elemento = criaRetangulo(id, w, h, x, y, corb, corp);
+            else if(strcmp(comando, "r") == 0){
+                fscanf(arq, "%d %lf %lf %lf %lf %s %s", &id_forma, &w, &h, &x, &y, corb, corp); 
+                elemento = criaRetangulo(id_forma, w, h, x, y, corb, corp);
                 listaA = insereElemento(listaA, elemento);
                 cont_i += 1;
             }
 
             else if(strcmp(comando, "t") == 0){
-                fscanf(arq, "%d %lf %lf %s %s %s", &id, &x, &y, corb, corp, text); 
-                elemento = criaTexto(id, x, y, corb, corp, text);
+                fscanf(arq, "%d %lf %lf %s %s %s", &id_forma, &x, &y, corb, corp, text); 
+                elemento = criaTexto(id_forma, x, y, corb, corp, text);
                 listaT = insereElemento(listaT, elemento);
             }
 
@@ -131,7 +132,7 @@ listaCirculos listaC, listaRetangulos listaA, listaTexto listaT)
             }
 
             else if(strcmp(comando, "sw") == 0){
-                 fscanf(arq, "%s %s", &cw, &rw);
+                 fscanf(arq, "%s %s", cw, rw);
              }
 
         }
