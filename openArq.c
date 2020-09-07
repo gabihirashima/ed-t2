@@ -30,8 +30,8 @@ listaCirculos listaC, listaRetangulos listaA, listaTexto listaT)
     char corb[20];
     char corp[20];
     char text[20];
-    int id;
-    int cep;
+    char *id;
+    char *cep;
     int i = 1000;
     int nq = 1000;
     int nh = 1000;
@@ -87,28 +87,28 @@ listaCirculos listaC, listaRetangulos listaA, listaTexto listaT)
             }
 
             else if(strcmp(comando, "q") == 0){
-                fscanf(arq, "%d %lf %lf %lf %lf", &cep, &x, &y ,&w ,&h);
+                fscanf(arq, "%s %lf %lf %lf %lf", cep, &x, &y ,&w ,&h);
                 elemento = criaQuadra(cep, x, y, w, h, cfillQ, cstrkQ);
                 listaQ = insereElemento(listaQ, elemento);
                 cont_nq += 1;
             }
 
             else if(strcmp(comando, "h") == 0){
-                 fscanf(arq, "%d %lf %lf", &id, &x, &y);
+                 fscanf(arq, "%s %lf %lf", id, &x, &y);
                  elemento = criaHidrante(id, x, y, cfillH, cstrkH);
                  listaH = insereElemento(listaH, elemento);
                  cont_nh += 1;
             }
 
             else if(strcmp(comando, "s") == 0){
-                 fscanf(arq, "%d %lf %lf", &id, &x, &y);
-                 elemento = criaRadio(id, x, y, cfillS, cstrkS);
-                 listaR = insereElemento(listaR, elemento);
+                 fscanf(arq, "%s %lf %lf", id, &x, &y);
+                 elemento = criaSemaforo(id, x, y, cfillS, cstrkS);
+                 listaS = insereElemento(listaS, elemento);
                  cont_ns += 1;
             }
 
             else if(strcmp(comando, "rb") == 0){
-                 fscanf(arq, "%d %lf %lf", &id, &x, &y);
+                 fscanf(arq, "%s %lf %lf", id, &x, &y);
                  elemento = criaRadio(id, x, y, cfillR, cstrkR);
                  listaR = insereElemento(listaR, elemento);
                  cont_nr += 1;

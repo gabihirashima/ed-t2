@@ -4,16 +4,16 @@
 #include "semaforo.h"
 
 typedef struct semaforo{
-int id; /*identificador do objeto*/
+char *id; /*identificador do objeto*/
 double x; /*coordenada x*/
 double y; /*coordenada y*/
-char cfill[20]; /*cor de preenchimento do objeto*/
-char cstrk[20]; /*cor da borda do objeto*/
+char *cfill; /*cor de preenchimento do objeto*/
+char *cstrk; /*cor da borda do objeto*/
 }Semaforo_S;
 
-Semaforo criaSemaforo(int id, double x, double y, char *cfill, char *cstrk){
+Semaforo criaSemaforo(char *id, double x, double y, char *cfill, char *cstrk){
     Semaforo_S *s = (Semaforo_S*)malloc(sizeof(Semaforo_S));
-    s->id = id;
+    strcpy(s->id, id);
     s->x = x;
     s->y = y;
     strcpy(s->cfill, cfill);
@@ -21,7 +21,7 @@ Semaforo criaSemaforo(int id, double x, double y, char *cfill, char *cstrk){
     return s;
 }
 
-int getSemaforoId(Semaforo semaforo){
+char *getSemaforoId(Semaforo semaforo){
     Semaforo_S *s = (Semaforo)semaforo;
     return s->id;
 }

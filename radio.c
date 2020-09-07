@@ -4,16 +4,16 @@
 #include "radio.h"
 
 typedef struct radio{
-    int id; /*identificador do objeto*/
+    char *id; /*identificador do objeto*/
     double x; /*coordenada x do objeto*/
     double y; /*coordenada y do objeto*/
-    char cfill[20]; /*cor de preenchimento do objeto*/
-    char cstrk[20]; /*cor de borda do objeto*/
+    char *cfill; /*cor de preenchimento do objeto*/
+    char *cstrk; /*cor de borda do objeto*/
 }Radio_S;
 
-Radio criaRadio(int id, double x, double y, char *cfill, char *cstrk){
+Radio criaRadio(char *id, double x, double y, char *cfill, char *cstrk){
     Radio_S *r = (Radio_S*)malloc(sizeof(Radio_S));
-    r->id = id;
+    strcpy(r->id, id);
     r->x = x;
     r->y = y;
     strcpy(r->cfill, cfill);
@@ -21,7 +21,7 @@ Radio criaRadio(int id, double x, double y, char *cfill, char *cstrk){
     return r;
 }
 
-int getRadioId(Radio radio){
+char *getRadioId(Radio radio){
     Radio_S *r = (Radio_S*)radio;
     return r->id;
 }

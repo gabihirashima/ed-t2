@@ -5,10 +5,10 @@
 typedef void* Quadra;
 
 /*Cria um elemento do tipo da struct Quadra_S*/
-Quadra criaQuadra(int, double, double, double, double, char *, char *);
+Quadra criaQuadra(char *, double, double, double, double, char *, char *);
 
 /*Retorna Cep de um elemento da lista de Quadras*/
-int getQuadraCep(Quadra);
+char *getQuadraCep(Quadra);
 
 /*Retorna X de um elemento da lista de Quadras*/
 double getQuadraX(Quadra);

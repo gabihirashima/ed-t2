@@ -90,7 +90,7 @@ listaStruct insereElemento(listaStruct l, tipo elemento){
 }
 
 /*remove um elemento na lista*/
-listaStruct removeElemento(listaStruct l, int id, char c){
+listaStruct removeElemento(listaStruct l, char *id, char c){
     if(getElemento(id, l, c) != 0){
         Lista *list = (listaStruct)l;
          
@@ -100,7 +100,7 @@ listaStruct removeElemento(listaStruct l, int id, char c){
          No *aux_3;
          while (inicio != NULL){        
                 if(c == 'r'){
-                    if(getRadioId(inicio->elemento) == id){
+                    if((strcmp(getRadioId(inicio->elemento), id)) == 0){
                         if(inicio == list->primeiro){
                             aux_1 = inicio;
                             aux_2 = inicio->prox;
@@ -132,7 +132,7 @@ listaStruct removeElemento(listaStruct l, int id, char c){
                 }
 
                 if(c == 's'){
-                    if(getSemaforoId(inicio->elemento) == id){
+                    if((strcmp(getSemaforoId(inicio->elemento), id)) == 0){
                         if(inicio == list->primeiro){
                             aux_1 = inicio;
                             aux_2 = inicio->prox;
@@ -164,7 +164,7 @@ listaStruct removeElemento(listaStruct l, int id, char c){
                 }
 
                 if(c == 'q'){
-                    if(getQuadraCep(inicio->elemento) == id){
+                    if((strcmp(getQuadraCep(inicio->elemento), id)) == 0){
                         if(inicio == list->primeiro){
                             aux_1 = inicio;
                             aux_2 = inicio->prox;
@@ -196,7 +196,7 @@ listaStruct removeElemento(listaStruct l, int id, char c){
                 }
 
                 if(c == 'h'){
-                    if(getHidranteId(inicio->elemento) == id){
+                    if((strcmp(getHidranteId(inicio->elemento), id)) == 0){
                         if(inicio == list->primeiro){
                             aux_1 = inicio;
                             aux_2 = inicio->prox;
@@ -226,8 +226,22 @@ listaStruct removeElemento(listaStruct l, int id, char c){
                     }
                     inicio = inicio->prox;
                 }
+            }
+    }
+    return NULL;  
+}
 
-                if(c == 'c'){
+listaStruct removeForma(listaStruct l, int id, char c){
+    if(getElemento(id, l, c) != 0){
+        Lista *list = (listaStruct)l;
+         
+         No *inicio = list->primeiro;
+         No *aux_1; 
+         No *aux_2;
+         No *aux_3;
+
+             while (inicio != NULL){  
+                 if(c == 'c'){
                     if(getCirculoId(inicio->elemento) == id){
                         if(inicio == list->primeiro){
                             aux_1 = inicio;
@@ -354,37 +368,46 @@ listaStruct removeElemento(listaStruct l, int id, char c){
                     }
                     inicio = inicio->prox;
                 }
-            }
+             }
     }
-    return NULL;  
+    return NULL;
 }
 
 /*retorna o conteudo do elemento, caso ele exista*/
-listaStruct getElemento(int n, listaStruct l, char c){
+listaStruct getElemento(char *id, listaStruct l, char c){
     Lista *list = (Lista*)l;
     No *node = list->primeiro;
         while (node != NULL){
             if(c == 'r'){
-                if(getRadioId(node->elemento) == n){
+                 if((strcmp(getRadioId(inicio->elemento), id)) == 0){
                     return node->elemento;
                 }
             }
             else if(c == 'h'){
-                if(getHidranteId(node->elemento) == n){
+                if((strcmp(getHidranteId(inicio->elemento), id)) == 0){
                     return node->elemento;
                 }
             }
             else if(c == 'q'){
-                if(getQuadraCep(node->elemento) == n){
+                if((strcmp(getQuadraId(inicio->elemento), id)) == 0){
                     return node->elemento;
                 }
             }
             else if(c == 's'){
-                if(getSemaforoId(node->elemento) == n){
+                 if((strcmp(getSemaforoId(inicio->elemento), id)) == 0){
                     return node->elemento;
                 }
             }
-            else if(c == 'c'){
+            node = node -> prox;
+        }
+    return NULL;
+}
+
+listaStruct getForma(int id, listaStruct l, char c){
+    Lista *list = (Lista*)l;
+    No *node = list->primeiro;
+        while (node != NULL){
+            if(c == 'c'){
                 if(getTextoId(node->elemento) == n){
                     return node->elemento;
                 }
@@ -406,11 +429,10 @@ listaStruct getElemento(int n, listaStruct l, char c){
             }
             node = node -> prox;
         }
-    return NULL;
 }
 
 /*insere um elemento antes da posicao indicada e retorna o indicador para esse elemento, caso a posição indicada exista*/
-listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
+listaStruct insertBefore(listaStruct l, tipo elemento, char *id, char c){
     if((getElemento(id, l, c)) != NULL){
          Lista *list = (listaStruct)l;
     
@@ -423,7 +445,7 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
 
             while (inicio != NULL){
                 if(c == 'r'){
-                    if(getRadioId(inicio->elemento) == id){
+                    if((strcmp(getRadioId(inicio->elemento), id)) == 0){
                        if(inicio == list->primeiro){
                             aux_1 = inicio;
                             aux_1->ant = node;
@@ -445,7 +467,7 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
                     inicio = inicio->prox;
                 }
                 else if(c == 'h'){
-                    if(getHidranteId(node->elemento) == id){
+                    if((strcmp(getHidranteId(inicio->elemento), id)) == 0){
                        if(inicio == list->primeiro){
                             aux_1 = inicio;
                             aux_1->ant = node;
@@ -467,7 +489,7 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
                     inicio = inicio->prox;
                 }
                 else if(c == 'q'){
-                    if(getQuadraCep(node->elemento) == id){
+                    if((strcmp(getQuadraId(inicio->elemento), id)) == 0){
                        if(inicio == list->primeiro){
                             aux_1 = inicio;
                             aux_1->ant = node;
@@ -489,7 +511,7 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
                     inicio = inicio->prox;
                 }
                 else if(c == 's'){
-                    if(getSemaforoId(node->elemento) == id){
+                   if((strcmp(getSemaforoId(inicio->elemento), id)) == 0){
                        if(inicio == list->primeiro){
                             aux_1 = inicio;
                             aux_1->ant = node;
@@ -510,7 +532,25 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
                     }
                     inicio = inicio->prox;
                 }
-                else if(c == 'c'){
+               
+            }
+    }
+    return NULL;
+}
+
+listaStruct insertBeforeElemento(listaStruct l, tipo elemento, int id, char c){
+    if((getElemento(id, l, c)) != NULL){
+         Lista *list = (listaStruct)l;
+    
+         No* node = (No*)malloc(sizeof(No));
+         node->elemento = elemento;
+         
+         No *inicio = list->primeiro;
+         No *aux_1; 
+         No *aux_2;
+
+            while (inicio != NULL){
+                 if(c == 'c'){
                     if(getTextoId(node->elemento) == id){
                        if(inicio == list->primeiro){
                             aux_1 = inicio;
@@ -604,7 +644,7 @@ listaStruct insertBefore(listaStruct l, tipo elemento, int id, char c){
 }
 
 /*insere um elemento depois da posicao indicada e retorna o indicador para esse elemento, caso a posição indicada exista*/
-listaStruct insertAfter(listaStruct l, tipo elemento, int id, char c){
+listaStruct insertAfter(listaStruct l, tipo elemento, char *id, char c){
     if((getElemento(id, l, c)) != NULL){
          Lista *list = (listaStruct)l;
     
@@ -617,7 +657,7 @@ listaStruct insertAfter(listaStruct l, tipo elemento, int id, char c){
 
             while (inicio != NULL){
                 if(c == 'r'){
-                    if(getRadioId(inicio->elemento) == id){
+                    if((strcmp(getRadioId(inicio->elemento), id)) == 0){
                        if(inicio == list->ultimo){
                             aux_1 = inicio;
                             aux_1->prox = node;
@@ -639,7 +679,7 @@ listaStruct insertAfter(listaStruct l, tipo elemento, int id, char c){
                     inicio = inicio->prox;
                 }
                 else if(c == 'h'){
-                    if(getHidranteId(node->elemento) == id){
+                    if((strcmp(getHidranteId(inicio->elemento), id)) == 0){
                        if(inicio == list->primeiro){
                             aux_1 = inicio;
                             aux_1->ant = node;
@@ -661,7 +701,7 @@ listaStruct insertAfter(listaStruct l, tipo elemento, int id, char c){
                     inicio = inicio->prox;
                 }
                 else if(c == 'q'){
-                    if(getQuadraCep(node->elemento) == id){
+                    if((strcmp(getQuadraId(inicio->elemento), id)) == 0){
                        if(inicio == list->primeiro){
                             aux_1 = inicio;
                             aux_1->ant = node;
@@ -683,7 +723,7 @@ listaStruct insertAfter(listaStruct l, tipo elemento, int id, char c){
                     inicio = inicio->prox;
                 }
                 else if(c == 's'){
-                    if(getSemaforoId(node->elemento) == id){
+                    if((strcmp(getSemaforoId(inicio->elemento), id)) == 0){
                        if(inicio == list->primeiro){
                             aux_1 = inicio;
                             aux_1->ant = node;
@@ -704,7 +744,24 @@ listaStruct insertAfter(listaStruct l, tipo elemento, int id, char c){
                     }
                     inicio = inicio->prox;
                 }
-                else if(c == 'c'){
+            }
+    }
+    return NULL;
+}
+
+listaStruct insertAfterForma(listaStruct l, tipo elemento, int id, char c){
+    if((getElemento(id, l, c)) != NULL){
+         Lista *list = (listaStruct)l;
+    
+         No* node = (No*)malloc(sizeof(No));
+         node->elemento = elemento;
+         
+         No *inicio = list->primeiro;
+         No *aux_1; 
+         No *aux_2;
+
+            while (inicio != NULL){
+                if(c == 'c'){
                     if(getTextoId(node->elemento) == id){
                        if(inicio == list->primeiro){
                             aux_1 = inicio;

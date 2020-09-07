@@ -5,10 +5,10 @@
 typedef void* Hidrante;
 
 /*Cria um elementro da struct Hidrante_S*/
-Hidrante criaHidrante(int, double, double, char *, char *);
+Hidrante criaHidrante(char *, double, double, char *, char *);
 
 /*Retorna a Id de um elemento de uma lista de hidrantes*/
-int getHidranteId(Hidrante);
+char *getHidranteId(Hidrante);
 
 /*Retorna X de um elemento de uma lista de hidrantes*/
 double getHidranteX(Hidrante);

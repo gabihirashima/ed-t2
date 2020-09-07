@@ -5,18 +5,18 @@
 #include "quadra.h"
 
 typedef struct quadra{
-int cep; /*identificação de quadra*/
+char *cep; /*identificação de quadra*/
 double x; /*coordenada x*/
 double y; /*coordenada y*/
 double w; /*largura da quadra*/
 double h; /*altura da quadra*/
-char cfill[20]; /*cor de preenchimento da quadra*/
-char cstrk[20]; /*cor da borda da quadra*/
+char *cfill; /*cor de preenchimento da quadra*/
+char *cstrk; /*cor da borda da quadra*/
 }Quadra_S;
 
-Quadra criaQuadra(int cep, double x, double y, double w, double h, char *cfill, char *cstrk){
+Quadra criaQuadra(char *cep, double x, double y, double w, double h, char *cfill, char *cstrk){
     Quadra_S *q = (Quadra_S*)malloc(sizeof(Quadra_S));
-    q->cep = cep;
+    strcpy(q->cep, cep);
     q->x = x;
     q->y = y;
     q->w = w;
@@ -26,7 +26,7 @@ Quadra criaQuadra(int cep, double x, double y, double w, double h, char *cfill, 
     return q;
 }
 
-int getQuadraCep(Quadra quadra){
+char *getQuadraCep(Quadra quadra){
     Quadra_S *q = (Quadra)quadra;
     return q->cep;
 }

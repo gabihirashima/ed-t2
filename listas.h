@@ -31,18 +31,26 @@ void liberaLista(listaStruct);
 listaStruct insereElemento(listaStruct, tipo);
 
 /*remove um elemento na listaStruct*/
-listaStruct removeElemento(listaStruct, int, char);
+listaStruct removeElemento(listaStruct, char*, char);
+
+listaStruct removeForma(listaStruct, int, char);
 
 /*retorna o valor do elemento, caso ele exista*/
-listaStruct getElemento(int, listaStruct, char);
+listaStruct getElemento(char*, listaStruct, char);
+
+listaStruct getForma(int, listaStruct, char);
 
 /*insere um elemento antes da posicao indicada e retorna o indicador para esse elemento, 
 caso a posição indicada exista*/
-listaStruct insertBefore(listaStruct, tipo, int, char);
+listaStruct insertBefore(listaStruct, tipo, char*, char);
+
+listaStruct insertBeforeElemento(listaStruct, tipo, int, char);
 
 /*insere um elemento depois da posicao indicada e retorna o indicador para esse elemento,
  caso a posição indicada exista*/
-listaStruct insertAfter(listaStruct l, tipo elemento, int id, char c);
+listaStruct insertAfter(listaStruct, tipo, char *, char);
+
+listaStruct insertAfterForma(listaStruct, tipo, int, char);
 
 /*retorna o primeiro elemento da lista, se a lista estiver vazia retorna null*/
 listaStruct getFirst(listaStruct);
