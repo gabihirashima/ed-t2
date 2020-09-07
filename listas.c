@@ -873,25 +873,25 @@ listaStruct getNext(char *id, listaStruct l, char c){
     No *aux;
         while (node != NULL){
             if(c == 'r'){
-                 if((strcmp(getRadioId(node->elemento), id)){
+                 if((strcmp(getRadioId(node->elemento), id)) == 0){
                     aux = node->prox;
                     return aux->elemento;
                 }
             }
             else if(c == 'h'){
-                if((strcmp(getHidranteId(node->elemento), id)){
+                if((strcmp(getHidranteId(node->elemento), id)) == 0){
                     aux = node->prox;
                     return aux->elemento;
                 }
             }
             else if(c == 'q'){
-                 if((strcmp(getQuadraCep(node->elemento), id)){
+                 if((strcmp(getQuadraCep(node->elemento), id)) == 0){
                     aux = node->prox;
                     return aux->elemento;
                 }
             }
             else if(c == 's'){
-                if((strcmp(getSemaforoId(node->elemento), id)){
+                if((strcmp(getSemaforoId(node->elemento), id)) == 0){
                     aux = node->prox;
                     return aux->elemento;
                 }
@@ -955,25 +955,25 @@ listaStruct getPrevious(char *id, listaStruct l, char c){
     No *aux;
         while (node != NULL){
            if(c == 'r'){
-               if((strcmp(getRadioId(node->elemento), id)){
+               if((strcmp(getRadioId(node->elemento), id)) == 0){
                     aux = node->ant;
                     return aux->elemento;
                 }
             }
             else if(c == 'h'){
-                if((strcmp(getHidranteId(node->elemento), id)){
+                if((strcmp(getHidranteId(node->elemento), id)) == 0){
                     aux = node->ant;
                     return aux->elemento;
                 }
             }
             else if(c == 'q'){
-                if((strcmp(getQuadraId(node->elemento), id)){
+                if((strcmp(getQuadraId(node->elemento), id)) == 0){
                     aux = node->ant;
                     return aux->elemento;
                 }
             }
             else if(c == 's'){
-                if((strcmp(getSemaforoId(node->elemento), id)){
+                if((strcmp(getSemaforoId(node->elemento), id)) == 0){
                     aux = node->ant;
                     return aux->elemento;
                 }
