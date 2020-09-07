@@ -10,28 +10,32 @@
 #include "formaL.h"
 #include "formaR.h"
 #include "formaT.h"
+#include "openArq.h"
 
 
 
 int main(int argc, char *argv[]){
-    listaStruct listaR = criaLista();
+    listaRadios listaR;
+    listaQuadras listaQ;
+    listaHidrantes listaH;
+    listaSemaforos listaS;
+    listaCirculos listaC;
+    listaRetangulos listaA;
+    listaTexto listaT;
     tipo elemento; 
     int tamanho;
 
-    elemento = criaRadio(1, 2.3, 2.4, "vermelho", "azul");
-    printf("\n%d, %lf, %lf, %s, %s", getRadioId(elemento), getRadioX(elemento), getRadioY(elemento), getRadioCFill(elemento), getRadioCStroke(elemento));
-    listaR = insereElemento(listaR, elemento);
-    elemento = criaRadio(2, 4.7, 5.8, "amarelo", "roxo");
-    listaR = insereElemento(listaR, elemento);
-    elemento = criaRadio(3, 14.7, 5.8, "rosa", "roxo");
-    listaR = insereElemento(listaR, elemento);
-    imprimeLista(listaR, 'r');
-    elemento = criaRadio(4, 24.7, 5.8, "rosa", "roxo");
-    listaR = insertBefore(listaR, elemento, 2, 'r');
-    imprimeLista(listaR, 'r');
-    tamanho = tamanhoLista(listaR);
-    printf("\ntamanho da lista: %d", tamanho);
-    liberaLista(listaR);
+        openGeo(listaR, listaQ, listaH, listaS, listaC, listaR, listaT);
+
+        imprimeLista(listaR, 'r');
+
+        liberaLista(listaR);
+        liberaLista(listaQ);
+        liberaLista(listaH);
+        liberaLista(listaS);
+        liberaLista(listaC);
+        liberaLista(listaA);
+        liberaLista(listaT);
 
     return 0;
 }

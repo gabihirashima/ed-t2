@@ -11,8 +11,9 @@
 #include "radio.h"
 #include "semaforo.h"
 #include "listas.h"
+#include "openArq.h"
 
-listaStruct openGeo(listaRadios listaR, listaQuadras listaQ, listaHidrantes listaH, listaSemaforos listaS,
+void openGeo(listaRadios listaR, listaQuadras listaQ, listaHidrantes listaH, listaSemaforos listaS,
 listaCirculos listaC, listaRetangulos listaA, listaTexto listaT)
 {
     FILE *arq; 
@@ -59,7 +60,7 @@ listaCirculos listaC, listaRetangulos listaA, listaTexto listaT)
     listaT = criaLista();
     tipo elemento;
 
-    arq = fopen("arquivo", "r");
+    arq = fopen("b1-bsc-000.geo", "r");
 
         if(arq == NULL){
             printf("Erro ao abrir o arquivo Geo!!");
