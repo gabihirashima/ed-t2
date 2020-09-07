@@ -25,7 +25,7 @@ int main(int argc, char *argv[]){
     tipo elemento; 
     int tamanho;
 
-        openGeo(listaR, listaQ, listaH, listaS, listaC, listaR, listaT);
+        openGeo(listaR, listaQ, listaH, listaS, listaC, listaA, listaT);
 
         //imprimeLista(listaR, 'r');
 
