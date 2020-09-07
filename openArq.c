@@ -47,9 +47,9 @@ listaCirculos listaC, listaRetangulos listaA, listaTexto listaT)
     double y;
     double w;
     double h;
-    double sw;
-    double cw;
-    double rw;
+    char sw[5];
+    char cw[5];
+    char rw[5];
 
     listaR = criaLista();
     listaQ = criaLista();
@@ -122,23 +122,23 @@ listaCirculos listaC, listaRetangulos listaA, listaTexto listaT)
             }
 
             else if(strcmp(comando, "ch") == 0){
-                 fscanf(arq, "%lf %s %s", &sw, cfillH, cstrkH);
+                 fscanf(arq, "%s %s %s", sw, cfillH, cstrkH);
             }
 
             else if(strcmp(comando, "cr") == 0){
-                 fscanf(arq, "%lf %s %s", &sw, cfillR, cstrkR);
+                 fscanf(arq, "%s %s %s", sw, cfillR, cstrkR);
             }
 
             else if(strcmp(comando, "cs") == 0){
-                 fscanf(arq, "%lf %s %s", &sw, cfillS, cstrkS);
+                 fscanf(arq, "%s %s %s", sw, cfillS, cstrkS);
             }
 
             else if(strcmp(comando, "cq") == 0){
-                 fscanf(arq, "%lf %s %s", &sw, cfillQ, cstrkQ);
+                 fscanf(arq, "%s %s %s", sw, cfillQ, cstrkQ);
             }
 
             else if(strcmp(comando, "sw") == 0){
-                 fscanf(arq, "%lf %lf", &cw, &rw);
+                 fscanf(arq, "%s %s", &cw, &rw);
              }
 
         }
