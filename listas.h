@@ -56,12 +56,16 @@ listaStruct insertAfterForma(listaStruct, tipo, int, char);
 listaStruct getFirst(listaStruct);
 
 /*retorna o elemento posterior a posicao inserida*/
-listaStruct getNext(int, listaStruct, char);
+listaStruct getNext(char*, listaStruct, char);
+
+listaStruct getNextForma(int, listaStruct, char);
 
 /*retorna o ultimo elemento da lista, se a lista estiver vazia, retorna null*/
 listaStruct getLast(listaStruct);
 
 /*retorna o elemento anterior a posicao inserida*/
-listaStruct getPrevious(int, listaStruct, char);
+listaStruct getPrevious(char*, listaStruct, char);
+
+listaStruct getPreviousForma(int, listaStruct, char);
 
 #endif
