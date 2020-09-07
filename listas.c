@@ -61,12 +61,12 @@ void liberaLista(listaStruct l){
     No *node = list->primeiro;
     No *aux;
         while(node != NULL){
-            aux = l; 
-            l = node->prox; 
-                free(aux->elemento);
-                free(aux);
-            node = node -> prox;
-        } 
+            aux = node->prox;
+                free(node->elemento);
+                free(node);
+            node = aux;
+        }
+    free(list); 
 }
 
 /*insere um elemento no final da lista*/

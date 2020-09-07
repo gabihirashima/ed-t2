@@ -12,7 +12,9 @@
 #include "semaforo.h"
 #include "listas.h"
 
-listaStruct openGeo(){
+listaStruct openGeo(listaRadios listaR, listaQuadras listaQ, listaHidrantes listaH, listaSemaforos listaS,
+listaCirculos listaC, listaRetangulos listaA, listaTexto listaT)
+{
     FILE *arq; 
 
     char comando[3];
@@ -24,6 +26,9 @@ listaStruct openGeo(){
     char cfillR[20];
     char cstrkS[20];
     char cfillS[20];
+    char corb[20];
+    char corp[20];
+    char text[20];
     int id;
     int cep;
     int i = 1000;
@@ -36,6 +41,7 @@ listaStruct openGeo(){
     int cont_nh = 0;
     int cont_ns = 0;
     int cont_nr = 0;
+    double r;
     double x;
     double y;
     double w;
@@ -44,10 +50,13 @@ listaStruct openGeo(){
     double cw;
     double rw;
 
-    listaRadios listaR = criaLista();
-    listaQuadras listaQ = criaLista();
-    listaHidrantes listaH = criaLista();
-    listaSemaforos listaS = criaLista();
+    listaR = criaLista();
+    listaQ = criaLista();
+    listaH = criaLista();
+    listaS = criaLista();
+    listaC = criaLista();
+    listaA = criaLista();
+    listaT = criaLista();
     tipo elemento;
 
     arq = fopen("arquivo", "r");
@@ -61,6 +70,26 @@ listaStruct openGeo(){
         while(fscanf(arq, "%s", comando) != EOF){
             if(strcmp(comando, "nx") == 0){
                 fscanf(arq, "%d %d %d %d %d\n", &i, &nq, &nh, &ns, &nr);
+            }
+
+            else if(strcmp(comando, "c") == 0){
+                fscanf(arq, "%d %lf %lf %lf %s %s", &id, &r, &x, &y, corb, corp); 
+                elemento = criaCirculo(id, r, x, y, corb, corp);
+                listaC = insereElemento(listaC, elemento);
+                cont_i += 1;
+            }
+
+            else if(strcmp(comando, "a") == 0){
+                fscanf(arq, "%d %lf %lf %lf %lf %s %s", &id, &w, &h, &x, &y, corb, corp); 
+                elemento = criaRetangulo(id, w, h, x, y, corb, corp);
+                listaA = insereElemento(listaA, elemento);
+                cont_i += 1;
+            }
+
+            else if(strcmp(comando, "t") == 0){
+                fscanf(arq, "%d %lf %lf %s %s %s", &id, &x, &y, corb, corp, text); 
+                elemento = criaTexto(id, x, y, corb, corp, text);
+                listaT = insereElemento(listaT, elemento);
             }
 
             else if(strcmp(comando, "q") == 0){

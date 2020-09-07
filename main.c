@@ -12,6 +12,7 @@
 #include "formaT.h"
 
 
+
 int main(int argc, char *argv[]){
     listaStruct listaR = criaLista();
     tipo elemento; 
