@@ -51,6 +51,9 @@ void imprimeLista(listaStruct l, char c){
             if(c == 'r'){
                 printf("\n%s, %lf, %lf, %s, %s", getRadioId(node->elemento), getRadioX(node->elemento), getRadioY(node->elemento), getRadioCFill(node->elemento), getRadioCStroke(node->elemento));
             }
+            else if(c == 'h'){
+                printf("\n%s, %lf, %lf, %s, %s", getHidranteId(node->elemento), getHidranteX(node->elemento), getHidranteY(node->elemento), getHidranteCFill(node->elemento), getHidranteCStroke(node->elemento));
+            }
             node = node->prox;
         }
 }
@@ -967,7 +970,7 @@ listaStruct getPrevious(char *id, listaStruct l, char c){
                 }
             }
             else if(c == 'q'){
-                if((strcmp(getQuadraId(node->elemento), id)) == 0){
+                if((strcmp(getQuadraCep(node->elemento), id)) == 0){
                     aux = node->ant;
                     return aux->elemento;
                 }

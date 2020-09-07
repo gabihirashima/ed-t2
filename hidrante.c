@@ -4,11 +4,11 @@
 #include "hidrante.h"
 
 typedef struct hidrante{
-char *id; /*numero identificador do objeto*/
+char id[20]; /*numero identificador do objeto*/
 double x; /*coordenada x*/
 double y; /*coordenada y*/
-char *cfill; /*cor de preenchimento do objeto*/
-char *cstrk; /*cor da borda do objeto*/
+char cfill[20]; /*cor de preenchimento do objeto*/
+char cstrk[20]; /*cor da borda do objeto*/
 }Hidrante_S;
 
 Hidrante criaHidrante(char *id, double x, double y, char *cfill, char *cstrk){
