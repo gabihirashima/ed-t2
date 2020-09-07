@@ -15,19 +15,19 @@
 
 
 int main(int argc, char *argv[]){
-    listaRadios listaR;
-    listaQuadras listaQ;
-    listaHidrantes listaH;
-    listaSemaforos listaS;
-    listaCirculos listaC;
-    listaRetangulos listaA;
-    listaTexto listaT;
+    listaRadios listaR = criaLista();
+    listaQuadras listaQ = criaLista();
+    listaHidrantes listaH = criaLista();
+    listaSemaforos listaS = criaLista();
+    listaCirculos listaC = criaLista();
+    listaRetangulos listaA = criaLista();
+    listaTexto listaT = criaLista();
     tipo elemento; 
     int tamanho;
 
         openGeo(listaR, listaQ, listaH, listaS, listaC, listaR, listaT);
 
-        imprimeLista(listaR, 'r');
+        //imprimeLista(listaR, 'r');
 
         liberaLista(listaR);
         liberaLista(listaQ);

@@ -51,13 +51,6 @@ listaCirculos listaC, listaRetangulos listaA, listaTexto listaT)
     char cw[5];
     char rw[5];
 
-    listaR = criaLista();
-    listaQ = criaLista();
-    listaH = criaLista();
-    listaS = criaLista();
-    listaC = criaLista();
-    listaA = criaLista();
-    listaT = criaLista();
     tipo elemento;
 
     arq = fopen("b1-bsc-000.geo", "r");
@@ -142,6 +135,7 @@ listaCirculos listaC, listaRetangulos listaA, listaTexto listaT)
              }
 
         }
+        imprimeLista(listaR, 'r');
 
     fclose(arq);
 }
